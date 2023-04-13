@@ -11,7 +11,7 @@ h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
   margin-top: 0; }
 
 a {
-  color: #ff00cc;
+  color: #d500ab;
   transition: all .3s ease-in-out; }
 
 a:focus,
@@ -30,7 +30,7 @@ img {
   background-size: cover; }
 
 .bg-grey {
-  background-color: #f7f8f9; }
+  background-color: #c3e1ff; }
 
 .fs-40 {
   font-size: 40px; }
@@ -75,7 +75,7 @@ section {
   color: #fff; }
 
 .jumbotron {
-  color: #fff;
+  color: #c7d6ef;
   padding-top: 80px;
   padding-bottom: 80px;
   background-repeat: no-repeat;
@@ -101,7 +101,7 @@ section {
     bottom: 0;
     left: 0;
     right: 0;
-    background: #ff00cc;
+    background: #14246e;
     /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #333399, #ff00cc);
     /* Chrome 10-25, Safari 5.1-6 */
@@ -132,11 +132,11 @@ section {
     bottom: 0;
     left: 0;
     right: 0;
-    background: #ff00cc;
+    background: #121864;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #333399, #ff00cc);
+    background: -webkit-linear-gradient(to right, #1d1d7e, #1a181d);
     /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #333399, #ff00cc);
+    background: linear-gradient(to right, #28286b, #313548);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
   .overlay.bg-white {
     color: #000; }
@@ -192,11 +192,11 @@ section {
 =            FORM RECTANGLE ETC            =
 ==========================================*/
 .rectangle-1 {
-  width: 2000px;
-  height: 400px;
-  background: #8E2DE2;
-  background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);
-  background: linear-gradient(to right, #4A00E0, #8E2DE2);
+  width: 2300px;
+  height: 700px;
+  background: #2d0f47;
+  background: -webkit-linear-gradient(to right, #230069, #481774);
+  background: linear-gradient(to right, #220067, #3c1361);
   transform-origin: 50% 150% 0;
   position: absolute;
   left: 0;
@@ -204,11 +204,11 @@ section {
   transform: scale(1) rotate(-10deg); }
 
 .rectangle-2 {
-  width: 2000px;
-  height: 400px;
-  background: #8E2DE2;
-  background: -webkit-linear-gradient(to right, #4A00E0, #8E2DE2);
-  background: linear-gradient(to right, #4A00E0, #8E2DE2);
+  width: 2300px;
+  height: 700px;
+  background: #2a0e43;
+  background: -webkit-linear-gradient(to right, #29007a, #471772);
+  background: linear-gradient(to right, #29007b, #401566);
   transform-origin: 65% 100% 0;
   position: absolute;
   right: 0;
@@ -217,7 +217,7 @@ section {
 
 @keyframes fade-in-right {
   from {
-    opacity: 0;
+    opacity: .2;
     transform: translateX(-100vw) rotate(-15deg); }
   to {
     opacity: 1;
@@ -225,7 +225,7 @@ section {
 
 @keyframes grow1 {
   from {
-    opacity: 0;
+    opacity: .2;
     transform: scale(2) rotate(-10deg); }
   to {
     opacity: 1;
@@ -278,8 +278,8 @@ section {
   animation: floating-slow ease-in-out 12s infinite; }
 
 .circle-1 {
-  width: 50px;
-  height: 50px;
+  width: 10px;
+  height: 10px;
   border: 2px solid #fff;
   position: absolute;
   display: block;
@@ -290,8 +290,8 @@ section {
   animation: fadeInFromTop .5s linear forwards, floating ease 4s infinite; }
 
 .circle-2 {
-  width: 70px;
-  height: 70px;
+  width: 20px;
+  height: 20px;
   top: 20%;
   left: 83%;
   border: 2px solid #fff;
