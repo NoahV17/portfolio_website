@@ -61,18 +61,6 @@ section {
   font-size: 40px;
   color: #000; }
 
-.navbar-nav .nav-link {
-  color: #fff;
-  transition: .3s ease; }
-
-.navbar-nav:hover li a {
-  opacity: 0.5; }
-  .navbar-nav:hover li a:hover {
-    opacity: 1; }
-
-.navbar-toggler {
-  font-size: 2rem;
-  color: #fff; }
 
 .jumbotron {
   color: #c7d6ef;
@@ -147,50 +135,7 @@ section {
 .text-white {
   color: #fff; }
 
-/*==============================
-=            BUTTON            =
-==============================*/
-.btn {
-  font-size: 14px;
-  font-weight: 600;
-  border-radius: 30px;
-  padding: 9px 25px;
-  text-transform: capitalize;
-  transition: all 0.3s ease 0s; }
 
-.btn-primary {
-  display: inline-block;
-  background-color: #ff00cc;
-  border-color: #ff00cc;
-  color: #fff; }
-  .btn-primary:hover {
-    background-color: #333399;
-    border-color: #333399;
-    color: #fff; }
-
-.btn-outline-primary {
-  color: #fff;
-  background-color: transparent;
-  background-image: none;
-  border-color: #fff; }
-  .btn-outline-primary:hover {
-    background-color: #333399;
-    border-color: #333399;
-    color: #fff; }
-
-.btn-shadow {
-  box-shadow: -5px 8px 20px 0px rgba(229, 16, 2, 0.15); }
-
-.btn-icon {
-  color: #000; }
-
-.btn-link {
-  color: #ff00cc; }
-
-/*=====  End of BUTTON  ======*/
-/*==========================================
-=            FORM RECTANGLE ETC            =
-==========================================*/
 .rectangle-1 {
   width: 2300px;
   height: 700px;
@@ -277,40 +222,6 @@ section {
   display: block;
   animation: floating-slow ease-in-out 12s infinite; }
 
-.circle-1 {
-  width: 10px;
-  height: 10px;
-  border: 2px solid #fff;
-  position: absolute;
-  display: block;
-  border-radius: 50%;
-  transform-origin: 50% 50%;
-  left: 5%;
-  top: 50%;
-  animation: fadeInFromTop .5s linear forwards, floating ease 4s infinite; }
-
-.circle-2 {
-  width: 20px;
-  height: 20px;
-  top: 20%;
-  left: 83%;
-  border: 2px solid #fff;
-  position: absolute;
-  display: block;
-  border-radius: 50%;
-  transform-origin: 50% 50%;
-  animation: fadeInFromTop .5s linear forwards, floating ease-in-out 4s infinite; }
-
-.circle-3 {
-  top: 80%;
-  right: 25%;
-  width: 40px;
-  height: 40px;
-  border: 2px solid #fff;
-  position: absolute;
-  display: block;
-  border-radius: 50%;
-  animation: fadeInFromTop .5s linear forwards, floating ease-in-out 4s infinite; }
 
 @keyframes floating {
   0% {
@@ -381,35 +292,7 @@ section {
     top: 50%;
     opacity: 1; }
 
-.grid-item-wrapper:before {
-  content: '';
-  display: block;
-  background: rgba(255, 255, 255, 0.7);
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  transition: all .3s ease;
-  opacity: 0; }
 
-.grid-item-wrapper:hover:before {
-  opacity: 1; }
-
-.grid-info {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  opacity: 0;
-  transition: all .3s ease; }
-
-.lightcase-icon-close:before {
-  content: '\e870';
-  font-family: "Linearicons-Free"; }
-
-.grid-title {
-  text-align: center; }
 
 /*=====  End of PORTFOLIO  ======*/
 /*===============================
@@ -538,18 +421,7 @@ section {
     background: linear-gradient(to right, #333399, #ff00cc);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     z-index: 11; }
-  #header-navbar {
-    padding-top: 15px !important;
-    padding-bottom: 15px !important; }
-  .navbar-transparent .navbar-collapse {
-    background: #ff00cc;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #333399, #ff00cc);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #333399, #ff00cc);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    padding: 10px; } }
-
+  
 @media (max-width: 767px) {
   .jumbotron h1 {
     font-size: 6rem; }
