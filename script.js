@@ -8,7 +8,7 @@ window.onscroll = function() {scrolling()};
 function scrolling() {
     let pos = window.scrollY;
     const elem = document.getElementById("bubbles");
-    if (pos < 150) {
+    if (pos < 500) {
         elem.style.width = pos + "px";
         elem.style.height = pos + "px";
     } 
