@@ -54,7 +54,7 @@
     
 ### <ins>July 2021 - July 2023</ins>
  - **Specialty Sales, Guest Advocate, and Tech Expert**<br>
-    - Worked flexible
+    - Worked flexible shifts
     - Opened and closed the store
     - Managed the electronics department
 

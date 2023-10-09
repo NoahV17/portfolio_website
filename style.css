@@ -1,7 +1,8 @@
 html{
   background-color: #ababc0;
   color: white;
-  font-family: "patua one";
+  font-family: 'Gabarito', cursive;
+  font-size: 25px;
 }
 
 body {
@@ -19,11 +20,17 @@ div {
 h1 {
   font-size: 50px;
   text-align: center;
-
+  font-family: 'Gabarito';
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 40px;
+  font-family: 'Gabarito';
+  text-align: center;
+}
+
+h3 {
+  font-family: 'Gabarito';
 }
 
 img {
@@ -38,7 +45,7 @@ img {
 
 p {
   font-size: 20px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 100;
 }
 
 .shadow {
@@ -55,7 +62,13 @@ p {
   margin-right: auto;
 }
 
-ul {
+.left {
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ul.top{
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -65,15 +78,41 @@ ul {
   top: 0;
   width: 100%;
   font-size: 25px;
+  font-family: 'Gabarito';
+  font-weight: 700;
+
+
 }
   
-li {
+li.top{
   float: left; }
 
-li a {
+li a.top{
   display: block;
   color: rgb(71, 69, 78);
   text-align: center;
   padding: 18px 14px;
   text-decoration: none;
+  font-family: 'Gabarito';
+  font-weight: 700;
 }
+
+.boxesSmall {
+  width: 40%;
+  padding: 5%;
+  float: left;
+  height: 25vw;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2vw;
+}
+.boxesLarge {
+  width: 40%;
+  padding: 5%;
+  float: left;
+  height: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 2vw;
+}
+
