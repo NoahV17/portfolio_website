@@ -87,11 +87,6 @@ ul.top{
 
 }
 
-ul {
-  text-align: center;
-
-}
-  
 li.top{
   float: left; }
 
@@ -105,24 +100,15 @@ li a.top{
   font-weight: 700;
 }
 
-.boxesSmall {
-  width: 40%;
-  padding: 5%;
-  float: left;
-  height: 25vw;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 2vw;
+ul {
+  align-content: center;
+  display:inline-block;
+  margin-left: 35%;
+  padding: 0px;
+  text-align: left;
 }
-.boxesLarge {
-  width: 40%;
-  padding: 5%;
-  float: left;
-  height: 60vw;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 2vw;
-}
+  
+
 
 .whitesvg {
   filter: invert(100%) sepia(6%) saturate(590%) hue-rotate(326deg) brightness(112%) contrast(100%);
