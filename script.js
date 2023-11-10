@@ -3,8 +3,12 @@ function myFunction() {
     var pq = document.getElementById("pqinput").value;
     var e = document.getElementById("einput").value;
     var input = document.getElementById("letterinput").value;
+    var output = "";
 
-    var output = Math.pow(alphabet.indexOf(input),e)%pq;
+    for (let index = 0; index < input.length; index++) {
+      const element = input.substr(index, 1);
+      output += Math.pow(alphabet.indexOf(element),e)%pq + " ";
+    }
 
     document.getElementById("calculate").innerHTML = output;
   }
