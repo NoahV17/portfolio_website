@@ -35,8 +35,8 @@ h3 {
 }
 
 img {
-  display: block;
-  
+  display: inline;
+  margin: 1%;
 }
 
 button {
@@ -98,6 +98,7 @@ ul.top{
   font-family: 'Gabarito';
   font-weight: 700;
   text-align: center;
+    z-index: 10;
 
 }
 
@@ -112,12 +113,12 @@ li a.top{
   text-decoration: none;
   font-family: 'Gabarito';
   font-weight: 700;
+    z-index: 10;
 }
 
 ul {
   align-content: center;
   display:inline-block;
-  margin-left: 35%;
   padding: 0px;
   text-align: left;
 }
@@ -127,4 +128,36 @@ ul {
 .whitesvg {
   filter: invert(100%) sepia(6%) saturate(590%) hue-rotate(326deg) brightness(112%) contrast(100%);
   display: inline;
+}
+
+
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  row-gap: 10px;
+
+}
+
+.image-gallery > li {
+  flex-basis: 350px; /*width: 350px;*/
+  position: relative;
+  cursor: pointer;
+  list-style-type: none;
+
+}
+
+.image-gallery::after {
+  content: "";
+  flex-basis: 350px;
+}
+
+.image-gallery li img {
+  object-fit: cover;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-radius: 5px;
 }
