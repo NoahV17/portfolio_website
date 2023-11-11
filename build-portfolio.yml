@@ -1,0 +1,25 @@
+name: build-portfolio-file
+
+on:
+  push:
+    paths:
+      - img/portfolio-images/**
+
+jobs:
+  buildUpdatedPortfolio:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Get current date
+        id: date
+        run: |
+          echo "date=$(date +'%Y-%m-%d')"
+
+      - name: Create file
+        run: |
+          cp portfolio-template.html portfolio.html
+          cd img/portfolio-images
+          for FILE in $(ls)
+          do
+          echo $FILE
+          done
