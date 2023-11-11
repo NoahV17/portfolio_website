@@ -21,5 +21,6 @@ jobs:
           cd img/portfolio-images
           for FILE in $(ls)
           do
-          echo $FILE
+          echo "<li><img class="shadow" src="$FILE" alt="" /></li>" >> portfolio.html
           done
+          echo "</ul></body></html>" >> portfolio.html
