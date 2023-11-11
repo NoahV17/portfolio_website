@@ -24,3 +24,6 @@ jobs:
           echo "<li><img class="shadow" src="$FILE" alt="" /></li>" >> portfolio.html
           done
           echo "</ul></body></html>" >> portfolio.html
+          git add .
+          git commit -m 'updated-portfolio-$date'
+          git push
