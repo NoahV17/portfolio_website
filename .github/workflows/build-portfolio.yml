@@ -12,18 +12,18 @@ jobs:
 
       - name: Get current date
         id: date
-        run: |
+        run:
           echo "date=$(date +'%Y-%m-%d')"
 
       - name: Create file
-        run: |
+        run:
           cp ".templates/portfolio-template.html" "outputTests/portfolio.html"
           cd img/portfolio-images
-          for FILE in $(ls)
-          do
-          echo "<li><img class="shadow" src="$FILE" alt="" /></li>" >> portfolio.html
-          done
-          echo "</ul></body></html>" >> portfolio.html
+          #for FILE in $(ls)
+          #do
+          #echo "<li><img class="shadow" src="$FILE" alt="" /></li>" >> portfolio.html
+          #done
+          #echo "</ul></body></html>" >> portfolio.html
 
       - name: Add & Commit
         uses: EndBug/add-and-commit@v9.1.3
