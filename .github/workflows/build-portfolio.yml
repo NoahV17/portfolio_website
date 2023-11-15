@@ -9,6 +9,7 @@ jobs:
   buildUpdatedPortfolio:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
 
       - name: Get current date
         id: date
@@ -18,13 +19,12 @@ jobs:
       - name: Create file
         run:
           cp ".templates/portfolio-template.html" "outputTests/portfolio.html"
-          touch test.txt
-          #cd img/portfolio-images/
-          #for FILE in $(ls)
-          #do
-          #echo "<li><img class="shadow" src="$FILE" alt="" /></li>" >> portfolio.html
-          #done
-          #echo "</ul></body></html>" >> portfolio.html
+          cd img/portfolio-images/
+          for FILE in $(ls)
+          do
+          echo "<li><img class="shadow" src="$FILE" alt="" /></li>" >> portfolio.html
+          done
+          echo "</ul></body></html>" >> portfolio.html
 
       - name: Add & Commit
         uses: EndBug/add-and-commit@v9.1.3
