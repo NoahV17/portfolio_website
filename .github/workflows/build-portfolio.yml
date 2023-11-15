@@ -18,7 +18,8 @@ jobs:
       - name: Create file
         run:
           cp ".templates/portfolio-template.html" "outputTests/portfolio.html"
-          cd img/portfolio-images/
+          touch test.txt
+          #cd img/portfolio-images/
           #for FILE in $(ls)
           #do
           #echo "<li><img class="shadow" src="$FILE" alt="" /></li>" >> portfolio.html
