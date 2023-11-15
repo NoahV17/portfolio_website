@@ -24,7 +24,6 @@ jobs:
           do \
           echo "<li><img class=\"shadow\" src=\"img/portfolio-images/$FILENAME\"></li> >> portfolio.html \
           done \
-          /
           echo "</ul></body></html>" >> portfolio.html
 
       - name: Add & Commit
