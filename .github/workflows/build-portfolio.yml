@@ -18,13 +18,12 @@ jobs:
 
       - name: Create file
         run:
-          cp ".templates/portfolio-template.html" "outputTests/portfolio.html"
-          cd img/portfolio-images/
-          for FILENAME in $(ls)
+          cp ".templates/portfolio-template.html" "portfolio_build.html"
+          for FILENAME in $(ls img/portfolio-images/)
           do
-          echo "<li><img class=\"shadow\" src=\"img/portfolio-images/$FILENAME\"></li>" >> portfolio.html
+          echo "<li><img class=\"shadow\" src=\"img/portfolio-images/$FILENAME\"></li>" >> "portfolio_build.html"
           done
-          echo "</ul></body></html>" >> portfolio.html
+          echo "</ul></body></html>" >> "portfolio_build.html"
 
       - name: Add & Commit
         uses: EndBug/add-and-commit@v9.1.3
