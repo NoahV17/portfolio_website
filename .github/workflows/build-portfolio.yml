@@ -22,7 +22,7 @@ jobs:
           cd img/portfolio-images/
           for FILENAME in $(ls)
           do
-          echo "<li><img class="shadow" src="img/portfolio-images/$FILENAME" alt="" /></li>" >> portfolio.html
+          echo "<li><img class=\"shadow\" src=\"img/portfolio-images/$FILENAME\" alt=\"\" /></li>\" >> portfolio.html
           done
           echo "</ul></body></html>" >> portfolio.html
 
