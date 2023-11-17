@@ -15,6 +15,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
       - name: Get current date
         id: date
@@ -26,7 +29,7 @@ jobs:
           touch testfile.md
           echo "testing" > testfile.md
           
-          cp ".templates/portfolio-template.html" "portfolio_build.html"
+          cp .templates/portfolio-template.html portfolio_build.html
           for FILENAME in $(ls img/portfolio-images/)
           do
           echo "<li><img class=\"shadow\" src=\"img/portfolio-images/$FILENAME\"></li>" >> "portfolio_build.html"
