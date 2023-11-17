@@ -22,7 +22,7 @@ jobs:
           echo "date=$(date +'%Y-%m-%d')"
 
       - name: Create file
-        run:
+        run: |
           touch testfile.md
           echo "testing" > testfile.md
           pwd
