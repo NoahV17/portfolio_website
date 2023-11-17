@@ -28,6 +28,7 @@ jobs:
         run:
           touch testfile.md
           echo "testing" > testfile.md
+          pwd
           
           cp .templates/portfolio-template.html portfolio_build.html
           for FILENAME in $(ls img/portfolio-images/)
