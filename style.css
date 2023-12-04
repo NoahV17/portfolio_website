@@ -103,7 +103,9 @@ ul.top{
 }
 
 li.top{
-  float: left; }
+  text-align: center;
+}
+
 
 li a.top{
   display: block;
