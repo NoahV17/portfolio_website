@@ -1,3 +1,5 @@
+//Code Block 1. Used for Encryption App
+
 function myFunction() {
     const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r","s", "t", "u", "v", "w", "x", "y", "z"];
     var pq = document.getElementById("pqinput").value;
@@ -12,3 +14,6 @@ function myFunction() {
 
     document.getElementById("calculate").innerHTML = output;
   }
+
+
+//Code block 2. Used for Currency Exchange App
