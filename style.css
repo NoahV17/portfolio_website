@@ -119,12 +119,30 @@ ul.top{
 
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (min-width: 470px) and (max-width: 500px) {
   ul.top{
     font-size: 22px;
   }
   li a img {
-    width: 23px;
+    width: 22px;
+  }
+}
+
+@media only screen and (min-width: 420px) and (max-width: 470px) {
+  ul.top{
+    font-size: 18px;
+  }
+  li a img {
+    width: 18px;
+  }
+}
+
+@media only screen and (min-width: 100px) and (max-width: 420px) {
+  ul.top{
+    font-size: 15px;
+  }
+  li a img {
+    width: 15px;
   }
 }
 
