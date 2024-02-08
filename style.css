@@ -137,7 +137,7 @@ ul.top{
   }
 }
 
-@media only screen and (min-width: 100px) and (max-width: 420px) {
+@media only screen and (min-width: 370px) and (max-width: 420px) {
   ul.top{
     font-size: 15px;
   }
@@ -145,6 +145,25 @@ ul.top{
     width: 15px;
   }
 }
+
+@media only screen and (min-width: 330px) and (max-width: 370px) {
+  ul.top{
+    font-size: 12px;
+  }
+  li a img {
+    width: 12px;
+  }
+}
+
+@media only screen and (min-width: 100px) and (max-width: 330px) {
+  ul.top{
+    font-size: 9px;
+  }
+  li a img {
+    width: 9px;
+  }
+}
+
 
 li.top{
   text-align: center;
