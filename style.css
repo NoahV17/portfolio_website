@@ -1,5 +1,5 @@
 html{
-  background-color: #ababc0;
+  background-color: #356183;
   color: white;
   font-family: 'Gabarito', cursive;
   font-size: 25px;
@@ -35,6 +35,11 @@ h3 {
   text-align: center;
 }
 
+a {
+  color: white;
+  justify-content: center;
+}
+
 img {
   display: inline;
   margin: 1%;
@@ -61,6 +66,7 @@ input {
 
 #nodot {
   list-style-type: none;
+  color: white;
 }
 
 #inline {
