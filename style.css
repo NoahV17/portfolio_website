@@ -111,12 +111,21 @@ ul.top{
   position: fixed;
   top: 0;
   width: 100%;
-  font-size: 25px;
+  font-size: 24px;
   font-family: 'Gabarito';
   font-weight: 700;
   text-align: center;
     z-index: 10;
 
+}
+
+@media only screen and (max-width: 500px) {
+  ul.top{
+    font-size: 22px;
+  }
+  li a img {
+    width: 23px;
+  }
 }
 
 li.top{
@@ -132,7 +141,7 @@ li a.top{
   text-decoration: none;
   font-family: 'Gabarito';
   font-weight: 700;
-    z-index: 10;
+  z-index: 10;
 }
 
 ul {
