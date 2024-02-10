@@ -119,6 +119,12 @@ ul.top{
 
 }
 
+@media only screen and (min-width: 500px) and (max-width: 650px) {
+  .timeline {
+    flex-direction: column;
+  }
+}
+
 @media only screen and (min-width: 470px) and (max-width: 500px) {
   ul.top{
     font-size: 22px;
@@ -128,6 +134,9 @@ ul.top{
   }
   #gif {
     width: 200px;
+  }
+  .timeline {
+    flex-direction: column;
   }
 }
 
@@ -141,6 +150,9 @@ ul.top{
   #gif {
     width: 200px;
   }
+  .timeline {
+    flex-direction: column;
+  }
 }
 
 @media only screen and (min-width: 370px) and (max-width: 420px) {
@@ -152,6 +164,9 @@ ul.top{
   }
   #gif {
     width: 180px;
+  }
+  .timeline {
+    flex-direction: column;
   }
 }
 
@@ -165,6 +180,9 @@ ul.top{
   #gif {
     width: 180px;
   }
+  .timeline {
+    flex-direction: column;
+  }
 }
 
 @media only screen and (min-width: 100px) and (max-width: 330px) {
@@ -176,6 +194,9 @@ ul.top{
   }
   #gif {
     width: 180px;
+  }
+  .timeline {
+    flex-direction: column;
   }
 }
 
@@ -252,13 +273,12 @@ ul {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: row;
 }
 .timeline-item {
   display: flex;
-  flex-direction: column;
+  flex-direction:column;
   align-items: center;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 .timeline-item .date {
   font-weight: bold;
@@ -267,4 +287,12 @@ ul {
 }
 .timeline-item .content {
   text-align: center;
+}
+
+
+
+
+
+.content{
+  font-size: 15px;
 }
