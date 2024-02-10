@@ -126,6 +126,9 @@ ul.top{
   li a img {
     width: 22px;
   }
+  #gif {
+    width: 200px;
+  }
 }
 
 @media only screen and (min-width: 420px) and (max-width: 470px) {
@@ -134,6 +137,9 @@ ul.top{
   }
   li a img {
     width: 18px;
+  }
+  #gif {
+    width: 200px;
   }
 }
 
@@ -144,6 +150,9 @@ ul.top{
   li a img {
     width: 15px;
   }
+  #gif {
+    width: 180px;
+  }
 }
 
 @media only screen and (min-width: 330px) and (max-width: 370px) {
@@ -153,6 +162,9 @@ ul.top{
   li a img {
     width: 12px;
   }
+  #gif {
+    width: 180px;
+  }
 }
 
 @media only screen and (min-width: 100px) and (max-width: 330px) {
@@ -161,6 +173,9 @@ ul.top{
   }
   li a img {
     width: 9px;
+  }
+  #gif {
+    width: 180px;
   }
 }
 
@@ -197,6 +212,8 @@ ul {
 
 
 
+/*Portfolio gallery code*/
+
 .image-gallery {
   display: flex;
   flex-wrap: wrap;
@@ -225,4 +242,29 @@ ul {
   height: auto;
   vertical-align: middle;
   border-radius: 5px;
+}
+
+
+/*Css for timeline*/
+
+.timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+}
+.timeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+.timeline-item .date {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.timeline-item .content {
+  text-align: center;
 }
