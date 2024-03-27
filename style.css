@@ -119,9 +119,44 @@ ul.top{
 
 }
 
-@media only screen and (min-width: 500px) and (max-width: 650px) {
+#paragraph{
+  font-size: 18px;
+
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1500px) {
   .timeline {
     flex-direction: column;
+  }
+  #gif {
+    width: 300px;
+    height: 450px;
+  }
+}
+
+@media only screen and (min-width: 700px) and (max-width: 1000px) {
+  .timeline {
+    flex-direction: column;
+  }
+  #gif {
+    width: 250px;
+    height: 350px;
+  }
+  #paragraph{
+    font-size: 13px;
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 700px) {
+  .timeline {
+    flex-direction: column;
+  }
+  #gif {
+    width: 200px;
+    height: 320px;
+  }
+  #paragraph{
+    font-size: 10px;
   }
 }
 
@@ -133,10 +168,14 @@ ul.top{
     width: 22px;
   }
   #gif {
-    width: 200px;
+    width: 160px;
+    height: 290px;
   }
   .timeline {
     flex-direction: column;
+  }
+  #paragraph{
+    font-size: 10px;
   }
 }
 
@@ -148,10 +187,14 @@ ul.top{
     width: 18px;
   }
   #gif {
-    width: 200px;
+    width: 90px;
+    height: 120px;
   }
   .timeline {
     flex-direction: column;
+  }
+  #paragraph{
+    font-size: 10px;
   }
 }
 
@@ -163,10 +206,14 @@ ul.top{
     width: 15px;
   }
   #gif {
-    width: 180px;
+    width: 90px;
+    height: 120px;
   }
   .timeline {
     flex-direction: column;
+  }
+  #paragraph{
+    font-size: 11px;
   }
 }
 
@@ -178,10 +225,15 @@ ul.top{
     width: 12px;
   }
   #gif {
-    width: 180px;
+    width: 90px;
+    height: 120px;
   }
   .timeline {
     flex-direction: column;
+  }
+  #paragraph{
+    font-size: 9px;
+  
   }
 }
 
@@ -193,10 +245,14 @@ ul.top{
     width: 9px;
   }
   #gif {
-    width: 180px;
+    width: 90px;
+    height: 120px;
   }
   .timeline {
     flex-direction: column;
+  }
+  #paragraph{
+    font-size: 8px;
   }
 }
 
