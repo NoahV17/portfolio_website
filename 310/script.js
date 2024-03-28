@@ -34,8 +34,8 @@ window.onload = function() {
 
             // Train the model with the best degree
             const regression = new PolynomialRegression(x, y, bestDegree);
-
-            document.getElementById('output').innerText = 'Best Degree: ' + bestDegree + '\n' +
+            document.getElementById('testOut').innerText = 'test button worked';
+            document.getElementById('output1').innerText = 'Best Degree: ' + bestDegree + '\n' +
                                                            'Best Score: ' + bestScore + '\n' +
                                                            'Prediction: ' + regression.predict(80);
         });
