@@ -29,6 +29,7 @@ function updateOutput(bestDegree, bestScore, prediction) {
 
 function test() {
     document.getElementById("testOut").innerText = "Test passed!";
+    console.log("Test passed!");
 }
 
 document.getElementById('btn').addEventListener('click', function() {
