@@ -1,19 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pair Plot from CSV</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script src="https://www.lactame.com/lib/ml/6.0.0/ml.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
+    
     <script src="script.js"></script>
 </head>
+
 <body>
-    <a href="https://github.com/NoahV17/portfolio_website/tree/main/310"></a>
-    <button id='btn' class="center" onclick="calculateBestDegree()">Calculate Best Degree</button>
+    <a href="https://github.com/NoahV17/portfolio_website/tree/main/310">Github code location</a>
     <button id='btn' class="center" onclick="trainModel()">Train Model</button>
     <button id='btn' class="center" onclick="updateOutput()">Update Output</button>
     <button id='btn' class="center" onclick="test()">Tester</button>
     
     <div id="output1"></div>
     <div id="testOut"></div>
+
+    <div id="columnOptions">
+    <label for="x-select">X Axis Column:</label>
+    <select name="cols" id="x-select">
+        <option value="">--Please choose an option--</option>
+        <option value="weight">Weight</option>
+        <option value="height">Height</option>
+        <option value="bats">Bats</option>
+        <option value="throws">Throws</option>
+        <option value="season">season</option>
+        <option value="salary">Salary</option>
+    </select>
+<br>
+    <label for="y-select">Y Axis Column:</label>
+    <select name="cols" id="y-select">
+        <option value="">--Please choose an option--</option>
+        <option value="weight">Weight</option>
+        <option value="height">Height</option>
+        <option value="bats">Bats</option>
+        <option value="throws">Throws</option>
+        <option value="season">season</option>
+        <option value="salary">Salary</option>
+    </select>
+
+    <br>
+    <button onclick="plotPairPlot()">Train and show regression model</button>
+    </div>
+
+    <div id="graph"></div>
 
 </body>
 </html>
