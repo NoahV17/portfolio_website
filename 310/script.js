@@ -10,13 +10,18 @@ function trainAndOutput() {
     const y = data.map(row => +row[yColumn]);
 
     // Train model
-    const { bestScore, bestDegree } = calculateBestDegree(x, y);
-    const regression = trainModel(x, y, bestDegree);
+    const regression = new ML.SimpleLinearRegression(x, y);
+
+    // Get the slope and intercept of the regression line
+    const slope = regression.slope;
+    const intercept = regression.intercept;
+
+    // Use the model to make a prediction
     const prediction = regression.predict(80);
 
     // Output model stats
-    document.getElementById("output1").innerText = 'Best Degree: ' + bestDegree + '\n' +
-                             'Best Score: ' + bestScore;
+    document.getElementById("output1").innerText = 'Slope: ' + slope + '\n' +
+                                                   'Intercept: ' + intercept;
     document.getElementById("output2").innerText = 'Prediction: ' + prediction;
 
     // Plot data
