@@ -1,0 +1,29 @@
+body {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+}
+
+div {
+    /* display: flex; */
+    justify-content: center;
+}
+
+h1 {
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+img {
+    display: inline;
+    padding: 20px;
+}
+
+.dm-sans-title {
+    font-family: "DM Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
