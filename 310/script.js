@@ -20,9 +20,9 @@ function trainAndOutput() {
     const prediction = regression.predict(80);
 
     // Output model stats
-    document.getElementById("output1").innerText = 'Slope: ' + slope + '\n' +
-                                                   'Intercept: ' + intercept;
-    document.getElementById("output2").innerText = 'Prediction: ' + prediction;
+    document.getElementById("output1").innerText = 'Slope: ' + slope.toFixed(2) + '\n' +
+                                                   'Intercept: ' + intercept.toFixed(2);
+    document.getElementById("output2").innerText = 'Prediction: ' + prediction.toFixed(2);
 
     // Plot data
     const trace = {
