@@ -4,7 +4,7 @@ function trainAndOutput() {
   const yColumn = document.getElementById('y-select').value;
 
   // Load CSV data
-  d3.csv('mlb_salaries.csv').then(data => {
+  d3.csv('heart.csv').then(data => {
     // Map selected columns to x and y arrays
     const x = data.map(row => +row[xColumn]);
     const y = data.map(row => +row[yColumn]);
