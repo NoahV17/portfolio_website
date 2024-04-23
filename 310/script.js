@@ -2,6 +2,7 @@ function trainAndOutput() {
   // Get selected columns
   const xColumn = document.getElementById('x-select').value;
   const yColumn = document.getElementById('y-select').value;
+  xpredict = document.getElementById('XpredictY').value;
 
   // Load CSV data
   d3.csv('heart.csv').then(data => {
@@ -17,8 +18,7 @@ function trainAndOutput() {
     const intercept = regression.intercept;
 
     // Use the model to make a prediction
-    x = document.getElementById('XpredictY').value;
-    const prediction = regression.predict(x);
+    const prediction = regression.predict(xpredict);
 
     // Output model stats
     document.getElementById("output1").innerText = 'Slope: ' + slope.toFixed(2) + '\n' +
