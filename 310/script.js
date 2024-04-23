@@ -17,7 +17,8 @@ function trainAndOutput() {
     const intercept = regression.intercept;
 
     // Use the model to make a prediction
-    const prediction = regression.predict(80);
+    x = document.getElementById('XpredictY').value;
+    const prediction = regression.predict(x);
 
     // Output model stats
     document.getElementById("output1").innerText = 'Slope: ' + slope.toFixed(2) + '\n' +
