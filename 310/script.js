@@ -38,6 +38,21 @@ function trainAndOutput() {
       xaxis: { title: xColumn },
       yaxis: { title: yColumn }
     };
-    Plotly.newPlot('graph', [trace], layout);
+    
+    // Calculate y values for the line
+    const xLine = x;
+    const yLine = xLine.map(xValue => slope * xValue + intercept);
+
+    // Create a trace for the line
+    const lineTrace = {
+      x: xLine,
+      y: yLine,
+      mode: 'lines',
+      name: 'Regression Line'
+    };
+
+    // Add the line trace to the plot
+    Plotly.newPlot('graph', [trace, lineTrace], layout);
+
   });
 }
