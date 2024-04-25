@@ -6,12 +6,18 @@ function trainAndOutput() {
 
   // Load CSV data
   d3.csv('heart.csv').then(data => {
+    // Separate data based on 'heart_disease' column
+    const dataYes = data.filter(row => row['heart_disease'] === 'yes');
+    const dataNo = data.filter(row => row['heart_disease'] === 'no');
+
     // Map selected columns to x and y arrays
-    const x = data.map(row => +row[xColumn]);
-    const y = data.map(row => +row[yColumn]);
+    const xYes = dataYes.map(row => +row[xColumn]);
+    const yYes = dataYes.map(row => +row[yColumn]);
+    const xNo = dataNo.map(row => +row[xColumn]);
+    const yNo = dataNo.map(row => +row[yColumn]);
 
     // Train model
-    const regression = new ML.SimpleLinearRegression(x, y);
+    const regression = new ML.SimpleLinearRegression(xYes.concat(xNo), yYes.concat(yNo));
 
     // Get the slope and intercept of the regression line
     const slope = regression.slope;
@@ -26,21 +32,25 @@ function trainAndOutput() {
                                                    'Intercept: ' + intercept.toFixed(2);
     document.getElementById("output2").innerText = 'Prediction: ' + prediction.toFixed(2);
 
-    // Plot data
-    const trace = {
-      x: x,
-      y: y,
+    // Create traces for the data points
+    const traceYes = {
+      x: xYes,
+      y: yYes,
       mode: 'markers',
-      type: 'scatter'
+      name: 'Heart Disease: Yes',
+      marker: { color: 'red' }
     };
-    const layout = {
-      title: 'Scatter Plot',
-      xaxis: { title: xColumn },
-      yaxis: { title: yColumn }
+
+    const traceNo = {
+      x: xNo,
+      y: yNo,
+      mode: 'markers',
+      name: 'Heart Disease: No',
+      marker: { color: 'blue' }
     };
-    
+
     // Calculate y values for the line
-    const xLine = x;
+    const xLine = xYes.concat(xNo);
     const yLine = xLine.map(xValue => slope * xValue + intercept);
 
     // Create a trace for the line
@@ -51,8 +61,14 @@ function trainAndOutput() {
       name: 'Regression Line'
     };
 
-    // Add the line trace to the plot
-    Plotly.newPlot('graph', [trace, lineTrace], layout);
+    // Define layout
+    const layout = {
+      title: 'Scatter Plot',
+      xaxis: { title: xColumn },
+      yaxis: { title: yColumn }
+    };
 
+    // Add the traces to the plot
+    Plotly.newPlot('graph', [traceYes, traceNo, lineTrace], layout);
   });
 }
