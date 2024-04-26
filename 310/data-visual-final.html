@@ -18,18 +18,24 @@
 </head>
 
 <body>
+    <ul>
+        <li><a href="../projects.html">Back to projects</a></li>
+        <li><a href="https://github.com/NoahV17/portfolio_website/tree/main/310" target="_blank">Visit the code on GitHub </a></li>
+      </ul>
     <div>
         <h1 class="dm-sans-title">Visual statistics - ML</h1>
-        <a href="https://github.com/NoahV17/portfolio_website/tree/main/310" target="_blank"><img src="../img/logo/github.svg" width="75px"/></a>
     </div>
     <p>Welcome to my final project for CSC 310 Programming for Data Science.<br>
     <br>
-    The goal of this site is to help show the relatioship between two chosen values inside of a dataset<br>
-    using a scatter plot, then to classify the seperate column's data's relatioship with a regression model.<br>
-    <br>
-    To use continue, please choose two of the available varibales to compare, and view the outputted graph.<br>
-    What do you notice? Is there a relatioship between the x and y variables? If not, try other categories that<br>
-    you believe might have a linear, or other type of relationship.
+    The goal of this site is to help show the relationship between two columns in a dataset.<br>
+    We will visualize data using a scatter plot, then to classify the data's relatioship with a regression model projected on top of the scatter plot.<br>
+    <br><br>
+    To use the web app, please choose two different varibales to compare, and view the outputted graph and its calculated regression line.<br>
+    <ul>
+        <li>What do you notice?</li> 
+        <li>Is there a relatioship between the x and y variables?</ul>
+    </ul>
+    If not, try other categories that might have a relationship.
     <br>
     </p>
     
@@ -64,7 +70,7 @@
         <option value="slope_peak_exercise">Slope peak exercise</option>
         <option value="number_of_major_vessels">Num major vessels</option>
     </select>
-
+    <p>NOTE TO PUT r square score with thing that says if its good or bad depending how close to 1 it is</p>
     <br>
     <button onclick="trainAndOutput()">Train and show regression data</button>
     </div>
@@ -75,8 +81,13 @@
     <div style="width: 50%; justify-self: center;" id="graph"></div>
     <!-- make sure this is centered ^ -->
 
+
+
     <p>Let's interpret what the following data means<br>(be sure to choose data, and press the compute button)</p>
-    <div id="output1">This is the slope of the calculated linear regression line, as well as the estimated Y axis parameter when X is 0</div>
+    <div id="output1">This is the slope of the calculated linear regression line, 
+        if you input a number in the box under the train button, it will predict 
+        what the y axis variable will equal when the x axis variable is equal to your input. 
+        The prediction is done using the linear regression model computed with the ml.js library.</div>
 
     <div id="output2"></div>
     <div id="testOut"></div>

@@ -18,7 +18,7 @@ h1 {
 
 img {
     display: inline;
-    padding: 20px;
+    padding: 10px;
 }
 
 .dm-sans-title {
@@ -26,4 +26,25 @@ img {
     font-optical-sizing: auto;
     font-weight: 600;
     font-style: normal;
+}
+
+
+
+/* Code for header in 310 project */
+ul {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+ 
+  li a {
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 16px;
+  }
+  
+  li a:hover {
+    background-color: #111;
+    color: white;
   }
