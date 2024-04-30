@@ -31,7 +31,7 @@ function trainAndOutput() {
     // Output model stats
     document.getElementById("output1").innerText = 'Slope: ' + slope.toFixed(2) + '\n' +
                                                    'Intercept: ' + intercept.toFixed(2);
-    document.getElementById("output2").innerText = 'Prediction: ' + prediction.toFixed(2);
+    document.getElementById("output2").innerText = '<heavy>Prediction:</heavy> ' + prediction.toFixed(2);
 
     // Create traces for the data points
     const traceYes = {
@@ -83,5 +83,68 @@ function trainAndOutput() {
     // Put the R-Square score into the respective cell of the HTML table
     const rSquareCellId = 'rs_' + xColumn + '_' + yColumn;
     document.getElementById(rSquareCellId).innerText = 'R-Square: ' + rSquare.toFixed(2);
+  });
+}
+
+
+function trainTreeAndOutput() {
+  // Load CSV data
+  d3.csv('heart.csv').then(data => {
+    // Convert categorical variables to numerical values
+    const convertToNumeric = (value) => {
+      if (isNaN(value)) {
+        return value.charCodeAt(0);
+      } else {
+        return parseFloat(value);
+      }
+    };
+
+    data.forEach(row => {
+      row['sex'] = convertToNumeric(row['sex']);
+      row['chest_pain_type'] = convertToNumeric(row['chest_pain_type']);
+      row['fasting_blood_sugar'] = convertToNumeric(row['fasting_blood_sugar']);
+      row['resting_electrocardiographic_results'] = convertToNumeric(row['resting_electrocardiographic_results']);
+      row['exercise_induced_angina'] = convertToNumeric(row['exercise_induced_angina']);
+      row['slope_peak_exercise'] = convertToNumeric(row['slope_peak_exercise']);
+      row['thal'] = convertToNumeric(row['thal']);
+      row['heart_disease'] = row['heart_disease'] === 'yes' ? 1 : 0;
+    });
+
+    // Separate features and target variable
+    const features = data.map(row => [
+      row['age'],
+      row['sex'],
+      row['chest_pain_type'],
+      row['resting_blood_pressure'],
+      row['serum_cholestoral'],
+      row['fasting_blood_sugar'],
+      row['resting_electrocardiographic_results'],
+      row['maximum_heart_rate_achieved'],
+      row['exercise_induced_angina'],
+      row['oldpeak'],
+      row['slope_peak_exercise'],
+      row['number_of_major_vessels'],
+      row['thal']
+    ]);
+    const target = data.map(row => row['heart_disease']);
+
+    // Train decision tree model
+    const decisionTree = new ML.DecisionTreeClassifier({
+      maxDepth: 5
+    });
+    decisionTree.train(features, target);
+
+    // Calculate accuracy
+    const predictions = decisionTree.predict(features);
+    const accuracy = ML.Utils.accuracy(target, predictions);
+
+    // Output accuracy
+    document.getElementById("tree_accuracy").innerText = 'Accuracy: ' + (accuracy * 100).toFixed(2) + '%';
+
+    // Visualize decision tree
+    const visualTree = document.getElementById("tree");
+    visualTree.innerHTML = '';
+    const visualizer = new ML.DecisionTreeVisualizer(decisionTree);
+    visualizer.draw(visualTree);
   });
 }

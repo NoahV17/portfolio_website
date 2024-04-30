@@ -24,20 +24,17 @@
     </ul>
     
     <h1 class="dm-sans-title">Visual statistics - ML</h1>
-    <p>
-    Welcome to my final project for CSC 310 Programming for Data Science.<br><br>
-
+    <p>Welcome to my final project for CSC 310 Programming for Data Science.<br><br>
     The goal is to help show the relationship between two variables in a dataset,<br>
     Visualizing data using a scatter plots, projected regression models, r-square, and more.<br><br>
-    To use the web app, please choose two different varibales to compare,<br>and view the outputted graph and its calculated regression line.<br>
-    </p>
-    <h2>1.</h2>
+    To use the web app, please choose two different varibales to compare,<br>and view the outputted graph and its calculated regression line.<br></p>
+    <h2>1. Understand the data</h2>
     <p>The first step to analyzing data is understanding the dataset you are working with,<br>
-        the following is a link to the dataset we will work with.<br>
+        the following is a link to the dataset we will work with. Also try and conclude where different connections may lie.<br>
         </p>
     <a href="https://github.com/NoahV17/portfolio_website/blob/main/310/heart.csv" target="_blank">Link to this heart disease dataset on GitHub</a><br>
     
-    <h2>2.</h2>
+    <h2>2. Training the model</h2>
 
     <!-- <button id='btn' class="center" onclick="trainModel()">Train Model</button>
     <button id='btn' class="center" onclick="updateOutput()">Update Output</button>
@@ -81,8 +78,6 @@
     <div style="width: 50%; justify-self: center;" id="graph"></div>
     <!-- make sure this is centered ^ -->
 
-
-
     <p>Let's interpret what this data means<br>(be sure to choose data, and press the compute button)</p>
     <div id="output1">This is the slope of the calculated linear regression line, <br>
         if you input a number in the box under the train button, it will predict <br>
@@ -93,9 +88,10 @@
     <div id="testOut"></div>
 
 
-    <h2>3.</h2>
-    <p>The table below is to show a glimpse into the variable's relationships,<br>
-        The button below will calculate and output the R-Square score of each<br>combination of variables you have chose to output a regression model of 
+    <h2>3. Assess model's accuracy</h2>
+    <p>The table below is to show a glimpse into the variable's relationships,
+       it shows the R-Square score of each<br>combination of variables you have chosen,
+       <br>For example reference one of the better models hits .37 and second .16. 
     </p>
     <div><table style="align-items: center;">
         <tr>
@@ -198,11 +194,14 @@
             <td><p id="rs_number_of_major_vessels_number_of_major_vessels"></p></td>    
         </tr>
     </table></div>
-
-
-
-
-<!-- https://www.kaggle.com/datasets/vivovinco/2022-mlb-player-stats?resource=download -->
-<!-- https://www.openintro.org/data/index.php?data=mlbbat10 -->
+    <h2>4. Try other models</h2>
+    <p>Since not much was found using purely quantitive data, lets choose a model that trains itself using both quantitive and qualitative data.<br>
+        We will choose the heart_disease column as the target variable and see if there is any correlation.</p>
+    
+    <button onclick="trainAndOutputTree()">Train and show tree model</button>
+    <div id="tree"></div>
+    <div id="tree_accuracy"></div>"
+        
+        <h2>5. What can we understand now?</h2>
 </body>
 </html>
