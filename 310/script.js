@@ -75,7 +75,10 @@ function trainAndOutput() {
 
 
     // Calculate R-Square score
-    const rSquare = regression.score(xYes.concat(xNo), yYes.concat(yNo));
+    const score = regression.score(xYes.concat(xNo), yYes.concat(yNo));
+    const rSquare = score.r2;
+
+    console.log(typeof rSquare, rSquare);  // Add this line
 
     // Put the R-Square score into the respective cell of the HTML table
     const rSquareCellId = 'rs_' + xColumn + '_' + yColumn;
