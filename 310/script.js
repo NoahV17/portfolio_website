@@ -1,4 +1,4 @@
-im
+
 function trainAndOutput() {
   // Get selected columns
   const xColumn = document.getElementById('x-select').value;
@@ -71,5 +71,14 @@ function trainAndOutput() {
 
     // Add the traces to the plot
     Plotly.newPlot('graph', [traceYes, traceNo, lineTrace], layout);
+
+
+
+    // Calculate R-Square score
+    const rSquare = regression.score(xYes.concat(xNo), yYes.concat(yNo));
+
+    // Put the R-Square score into the respective cell of the HTML table
+    const rSquareCellId = 'rs_' + xColumn + '_' + yColumn;
+    document.getElementById(rSquareCellId).innerText = 'R-Square: ' + rSquare.toFixed(2);
   });
 }

@@ -106,7 +106,6 @@ ul.top{
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #fbf5ff;
   position: fixed;
   top: 0;
   width: 100%;
@@ -265,10 +264,13 @@ li a.top{
   display: block;
   color: rgb(71, 69, 78);
   text-align: center;
-  padding: 18px 14px;
+  padding: 4px 4px;
+  margin: 10px;
   text-decoration: none;
   font-family: 'Gabarito';
   font-weight: 700;
+  background-color: aliceblue;
+  border-radius: 15px;
   z-index: 10;
 }
 

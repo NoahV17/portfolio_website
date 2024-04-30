@@ -21,25 +21,24 @@
     <ul>
         <li><a href="../projects.html">Back to projects</a></li>
         <li><a href="https://github.com/NoahV17/portfolio_website/tree/main/310" target="_blank">Visit the code on GitHub </a></li>
-      </ul>
-    <div>
-        <h1 class="dm-sans-title">Visual statistics - ML</h1>
-    </div>
-    <p>Welcome to my final project for CSC 310 Programming for Data Science.<br>
-    <br>
-    The goal of this site is to help show the relationship between two columns in a dataset.<br>
-    We will visualize data using a scatter plot, then to classify the data's relatioship with a regression model projected on top of the scatter plot.<br>
-    <br><br>
-    To use the web app, please choose two different varibales to compare, and view the outputted graph and its calculated regression line.<br>
-    <ul>
-        <li>What do you notice?</li> 
-        <li>Is there a relatioship between the x and y variables?</ul>
     </ul>
-    If not, try other categories that might have a relationship.
-    <br>
+    
+    <h1 class="dm-sans-title">Visual statistics - ML</h1>
+    <p>
+    Welcome to my final project for CSC 310 Programming for Data Science.<br><br>
+
+    The goal is to help show the relationship between two variables in a dataset,<br>
+    Visualizing data using a scatter plots, projected regression models, r-square, and more.<br><br>
+    To use the web app, please choose two different varibales to compare,<br>and view the outputted graph and its calculated regression line.<br>
     </p>
+    <h2>1.</h2>
+    <p>The first step to analyzing data is understanding the dataset you are working with,<br>
+        the following is a link to the dataset we will work with.<br>
+        </p>
+    <a href="https://github.com/NoahV17/portfolio_website/blob/main/310/heart.csv" target="_blank">Link to this heart disease dataset on GitHub</a><br>
     
-    
+    <h2>2.</h2>
+
     <!-- <button id='btn' class="center" onclick="trainModel()">Train Model</button>
     <button id='btn' class="center" onclick="updateOutput()">Update Output</button>
     <button id='btn' class="center" onclick="test()">Tester</button> -->
@@ -69,21 +68,24 @@
         <option value="oldpeak">Old peak</option>
         <option value="slope_peak_exercise">Slope peak exercise</option>
         <option value="number_of_major_vessels">Num major vessels</option>
-    </select>
-    <p>NOTE TO PUT r square score with thing that says if its good or bad depending how close to 1 it is</p>
+    </select><br>
+    Input X Value for Prediction: <input type="text" id="XpredictY" placeholder="0">
     <br>
-    <button onclick="trainAndOutput()">Train and show regression data</button>
-    </div>
-    <input type="text" id="XpredictY" placeholder="Input x value to predict at">
+    --- <button onclick="trainAndOutput()">Train and show regression data</button> ---
+    <br><br>
+    <ul>
+        <li>Is there a relatioship between the x and y variables?</li>
+        <li>If not, try other categories that might have a relationship.</li>
+    </ul>
 
-    <br>
+    <p>NOTE TO PUT r square score with thing that says if its good or bad depending how close to 1 it is</p>
 
     <div style="width: 50%; justify-self: center;" id="graph"></div>
     <!-- make sure this is centered ^ -->
 
 
 
-    <p>Let's interpret what the following data means<br>(be sure to choose data, and press the compute button)</p>
+    <p>Let's interpret what this data means<br>(be sure to choose data, and press the compute button)</p>
     <div id="output1">This is the slope of the calculated linear regression line, 
         if you input a number in the box under the train button, it will predict 
         what the y axis variable will equal when the x axis variable is equal to your input. 
@@ -92,6 +94,112 @@
     <div id="output2"></div>
     <div id="testOut"></div>
 
+
+    <h2>3.</h2>
+    <p>The table below is to show a glimpse into the variable's relationships,<br>
+        The button below will calculate and output the R-Square score of each<br>combination of variables you have chose to output a regression model of 
+    </p>
+    <div><table style="align-items: center;">
+        <tr>
+            <th></th>
+            <th>Age</th>
+            <th>Resting blood pressure</th>
+            <th>Serum cholestoral</th>
+            <th>Resting electro results</th>
+            <th>Max HR</th>
+            <th>Old peak</th>
+            <th>Slope peak exercise</th>
+            <th>Num major vessels</th>
+        </tr>
+        <tr>
+            <th>Age</th>
+            <td><p id="rs_Age_Age"></p></td>
+            <td><p id="rs_Age_RBP"></p></td>
+            <td><p id="rs_Age_SerumCho"></p></td>
+            <td><p id="rs_Age_RER"></p></td>
+            <td><p id="rs_Age_MaxHR"></p></td>
+            <td><p id="rs_Age_OldPeak"></p></td>
+            <td><p id="rs_Age_SPE"></p></td>
+            <td><p id="rs_Age_NumVessels"></p></td>
+        </tr>
+        <tr>
+            <th>Resting blood pressure</th>
+            <td><p id="rs_RBP_Age"></p></td>
+            <td><p id="rs_RBP_RBP"></p></td>
+            <td><p id="rs_RBP_SerumCho"></p></td>
+            <td><p id="rs_RBP_RER"></p></td>
+            <td><p id="rs_RBP_MaxHR"></p></td>
+            <td><p id="rs_RBP_OldPeak"></p></td>
+            <td><p id="rs_RBP_SPE"></p></td>
+            <td><p id="rs_RBP_NumVessels"></p></td>
+        </tr>
+        <tr>
+            <th>Serum cholestoral</th>
+            <td><p id="rs_SerumCho_Age"></p></td>
+            <td><p id="rs_SerumCho_RBP"></p></td>
+            <td><p id="rs_SerumCho_SerumCho"></p></td>
+            <td><p id="rs_SerumCho_RER"></p></td>
+            <td><p id="rs_SerumCho_MaxHR"></p></td>
+            <td><p id="rs_SerumCho_OldPeak"></p></td>
+            <td><p id="rs_SerumCho_SPE"></p></td>
+            <td><p id="rs_SerumCho_NumVessels"></p></td>
+        </tr>
+        <tr>
+            <th>Resting electro results</th>
+            <td><p id="rs_RER_Age"></p></td>
+            <td><p id="rs_RER_RBP"></p></td>
+            <td><p id="rs_RER_SerumCho"></p></td>
+            <td><p id="rs_RER_RER"></p></td>
+            <td><p id="rs_RER_MaxHR"></p></td>
+            <td><p id="rs_RER_OldPeak"></p></td>
+            <td><p id="rs_RER_SPE"></p></td>
+            <td><p id="rs_RER_NumVessels"></p></td>
+        </tr>
+        <tr>
+            <th>Max HR</th>
+            <td><p id="rs_MaxHR_Age"></p></td>
+            <td><p id="rs_MaxHR_RBP"></p></td>
+            <td><p id="rs_MaxHR_SerumCho"></p></td>
+            <td><p id="rs_MaxHR_RER"></p></td>
+            <td><p id="rs_MaxHR_MaxHR"></p></td>
+            <td><p id="rs_MaxHR_OldPeak"></p></td>
+            <td><p id="rs_MaxHR_SPE"></p></td>
+            <td><p id="rs_MaxHR_NumVessels"></p></td>    
+        </tr>
+        <tr>
+            <th>Old peak</th>
+            <td><p id="rs_OldPeak_Age"></p></td>
+            <td><p id="rs_OldPeak_RBP"></p></td>
+            <td><p id="rs_OldPeak_SerumCho"></p></td>
+            <td><p id="rs_OldPeak_RER"></p></td>
+            <td><p id="rs_OldPeak_MaxHR"></p></td>
+            <td><p id="rs_OldPeak_OldPeak"></p></td>
+            <td><p id="rs_OldPeak_SPE"></p></td>
+            <td><p id="rs_OldPeak_NumVessels"></p></td>   
+        </tr>
+        <tr>
+            <th>Slope peak exercise</th>
+            <td><p id="rs_SPE_Age"></p></td>
+            <td><p id="rs_SPE_RBP"></p></td>
+            <td><p id="rs_SPE_SerumCho"></p></td>
+            <td><p id="rs_SPE_RER"></p></td>
+            <td><p id="rs_SPE_MaxHR"></p></td>
+            <td><p id="rs_SPE_OldPeak"></p></td>
+            <td><p id="rs_SPE_SPE"></p></td>
+            <td><p id="rs_SPE_NumVessels"></p></td>    
+        </tr>
+        <tr>
+            <th>Num major vessels</th>
+            <td><p id="rs_NumVessels_Age"></p></td>
+            <td><p id="rs_NumVessels_RBP"></p></td>
+            <td><p id="rs_NumVessels_SerumCho"></p></td>
+            <td><p id="rs_NumVessels_RER"></p></td>
+            <td><p id="rs_NumVessels_MaxHR"></p></td>
+            <td><p id="rs_NumVessels_OldPeak"></p></td>
+            <td><p id="rs_NumVessels_SPE"></p></td>
+            <td><p id="rs_NumVessels_NumVessels"></p></td>    
+        </tr>
+    </table></div>
 
 
 

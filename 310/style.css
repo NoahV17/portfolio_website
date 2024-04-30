@@ -48,3 +48,11 @@ ul {
     background-color: #111;
     color: white;
   }
+
+  th, td {
+    border: 1px solid;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
