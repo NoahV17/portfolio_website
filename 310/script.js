@@ -87,7 +87,7 @@ function trainAndOutput() {
 }
 
 
-function trainTreeAndOutput() {
+function trainAndOutputTree() {
   // Load CSV data
   d3.csv('heart.csv').then(data => {
     // Convert categorical variables to numerical values
