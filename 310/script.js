@@ -136,7 +136,7 @@ function trainAndOutputTree() {
 
     // Calculate accuracy
     const predictions = decisionTree.predict(features);
-    const accuracy = ML.Utils.accuracy(target, predictions);
+    const accuracy = calculateAccuracy(target, predictions);
 
     // Output accuracy
     document.getElementById("tree_accuracy").innerText = 'Accuracy: ' + (accuracy * 100).toFixed(2) + '%';
@@ -147,4 +147,14 @@ function trainAndOutputTree() {
     const visualizer = new ML.DecisionTreeVisualizer(decisionTree);
     visualizer.draw(visualTree);
   });
+}
+
+function calculateAccuracy(target, predictions) {
+  let correct = 0;
+  for (let i = 0; i < target.length; i++) {
+    if (target[i] === predictions[i]) {
+      correct++;
+    }
+  }
+  return correct / target.length;
 }
