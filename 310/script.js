@@ -221,9 +221,13 @@ function trainAndOutputTree() {
       var nodes = [];
 
       // Create a node for the current level
+      var nodeLabel = `Column ${tree.splitColumn} <= ${tree.splitValue}`;
+      if (tree.gain !== undefined) {
+        nodeLabel += `\nGini = ${tree.gain.toFixed(3)}`;
+      }
       var node = {
         id: tree.kind + Math.random(), // Use a unique ID for each node
-        label: `Column ${tree.splitColumn} <= ${tree.splitValue}\nGini = ${tree.gain.toFixed(3)}`
+        label: nodeLabel
       };
       nodes.push(node);
 
@@ -291,6 +295,7 @@ function trainAndOutputTree() {
     var network = new vis.Network(visualTree, data, options);
   });
 }
+
 
 
 function calculateAccuracy(target, predictions) {
