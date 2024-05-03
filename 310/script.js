@@ -141,12 +141,15 @@ function trainAndOutputTree() {
     // Output accuracy
     document.getElementById("tree_accuracy").innerText = 'Accuracy: ' + (accuracy * 100).toFixed(2) + '%';
 
-    // Visualize decision tree
+    // Convert decision tree to JSON
+    const treeJson = JSON.stringify(decisionTree, null, 2);
+
+    // Output JSON to console
+    console.log(treeJson);
+
+    // Output JSON to page
     const visualTree = document.getElementById("tree");
-    visualTree.innerHTML = '';
-    const treeString = decisionTree.toString();
-    console.log(treeString);
-    visualTree.innerHTML = treeString.replace(/\n/g, '<br>');;
+    visualTree.innerHTML = '<pre>' + treeJson + '</pre>';
   });
 }
 
