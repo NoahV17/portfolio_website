@@ -87,6 +87,72 @@ function trainAndOutput() {
 }
 
 
+// function trainAndOutputTree() {
+//   // Load CSV data
+//   d3.csv('heart.csv').then(data => {
+//     // Convert categorical variables to numerical values
+//     const convertToNumeric = (value) => {
+//       if (isNaN(value)) {
+//         return value.charCodeAt(0);
+//       } else {
+//         return parseFloat(value);
+//       }
+//     };
+
+//     data.forEach(row => {
+//       row['sex'] = convertToNumeric(row['sex']);
+//       row['chest_pain_type'] = convertToNumeric(row['chest_pain_type']);
+//       row['fasting_blood_sugar'] = convertToNumeric(row['fasting_blood_sugar']);
+//       row['resting_electrocardiographic_results'] = convertToNumeric(row['resting_electrocardiographic_results']);
+//       row['exercise_induced_angina'] = convertToNumeric(row['exercise_induced_angina']);
+//       row['slope_peak_exercise'] = convertToNumeric(row['slope_peak_exercise']);
+//       row['thal'] = convertToNumeric(row['thal']);
+//       row['heart_disease'] = row['heart_disease'] === 'yes' ? 1 : 0;
+//     });
+
+//     // Separate features and target variable
+//     const features = data.map(row => [
+//       row['age'],
+//       row['sex'],
+//       row['chest_pain_type'],
+//       row['resting_blood_pressure'],
+//       row['serum_cholestoral'],
+//       row['fasting_blood_sugar'],
+//       row['resting_electrocardiographic_results'],
+//       row['maximum_heart_rate_achieved'],
+//       row['exercise_induced_angina'],
+//       row['oldpeak'],
+//       row['slope_peak_exercise'],
+//       row['number_of_major_vessels'],
+//       row['thal']
+//     ]);
+//     const target = data.map(row => row['heart_disease']);
+
+//     // Train decision tree model
+//     const decisionTree = new ML.DecisionTreeClassifier({
+//       maxDepth: 5
+//     });
+//     decisionTree.train(features, target);
+
+//     // Calculate accuracy
+//     const predictions = decisionTree.predict(features);
+//     const accuracy = calculateAccuracy(target, predictions);
+
+//     // Output accuracy
+//     document.getElementById("tree_accuracy").innerText = 'Accuracy: ' + (accuracy * 100).toFixed(2) + '%';
+
+//     // Convert decision tree to JSON
+//     const treeJson = JSON.stringify(decisionTree, null, 2);
+
+//     // Output JSON to console
+//     console.log(treeJson);
+
+//     // Output JSON to page
+//     const visualTree = document.getElementById("tree");
+//     visualTree.innerHTML = '<pre>' + treeJson + '</pre>';
+//   });
+// }
+
 function trainAndOutputTree() {
   // Load CSV data
   d3.csv('heart.csv').then(data => {
@@ -142,16 +208,90 @@ function trainAndOutputTree() {
     document.getElementById("tree_accuracy").innerText = 'Accuracy: ' + (accuracy * 100).toFixed(2) + '%';
 
     // Convert decision tree to JSON
-    const treeJson = JSON.stringify(decisionTree, null, 2);
+    const treeJson = decisionTree.toJSON();
 
     // Output JSON to console
     console.log(treeJson);
 
     // Output JSON to page
     const visualTree = document.getElementById("tree");
-    visualTree.innerHTML = '<pre>' + treeJson + '</pre>';
+
+    // Define a function to recursively create nodes
+    function createNodes(tree) {
+      var nodes = [];
+
+      // Create a node for the current level
+      var node = {
+        id: tree.kind + Math.random(), // Use a unique ID for each node
+        label: `Column ${tree.splitColumn} <= ${tree.splitValue}\nGini = ${tree.gain.toFixed(3)}`
+      };
+      nodes.push(node);
+
+      // Create left child node if exists
+      if (tree.left) {
+        var leftNodes = createNodes(tree.left);
+        nodes = nodes.concat(leftNodes);
+
+        // Create an edge from current node to left child node
+        var edge = {
+          from: node.id,
+          to: leftNodes[0].id,
+          label: 'True'
+        };
+        nodes.push(edge);
+      }
+
+      // Create right child node if exists
+      if (tree.right) {
+        var rightNodes = createNodes(tree.right);
+        nodes = nodes.concat(rightNodes);
+
+        // Create an edge from current node to right child node
+        var edge = {
+          from: node.id,
+          to: rightNodes[0].id,
+          label: 'False'
+        };
+        nodes.push(edge);
+      }
+
+      return nodes;
+    }
+
+    // Create nodes and edges for the decision tree
+    var nodes = createNodes(treeJson);
+
+    // Create a data object with nodes and edges
+    var data = {
+      nodes: new vis.DataSet(nodes.filter(n => !n.from)), // Only add nodes with no 'from' attribute (top-level nodes)
+      edges: new vis.DataSet(nodes.filter(n => n.from)) // Only add edges (connections between nodes)
+    };
+
+    // Define layout
+    var options = {
+      nodes: {
+        shape: 'box',
+        margin: 10,
+        widthConstraint: {
+          minimum: 150
+        }
+      },
+      edges: {
+        arrows: 'to'
+      },
+      layout: {
+        hierarchical: {
+          direction: 'UD',
+          sortMethod: 'directed'
+        }
+      }
+    };
+
+    // Create a network visualization
+    var network = new vis.Network(visualTree, data, options);
   });
 }
+
 
 function calculateAccuracy(target, predictions) {
   let correct = 0;
