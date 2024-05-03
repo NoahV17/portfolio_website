@@ -144,8 +144,9 @@ function trainAndOutputTree() {
     // Visualize decision tree
     const visualTree = document.getElementById("tree");
     visualTree.innerHTML = '';
-    const visualizer = new ML.DecisionTreeVisualizer(decisionTree);
-    visualizer.draw(visualTree);
+    const treeString = decisionTree.toString();
+    console.log(treeString);
+    visualTree.innerHTML = treeString.replace(/\n/g, '<br>');;
   });
 }
 
