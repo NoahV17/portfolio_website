@@ -208,68 +208,13 @@ function trainAndOutputTree() {
     document.getElementById("tree_accuracy").innerText = 'Accuracy: ' + (accuracy * 100).toFixed(2) + '%';
 
     // Convert decision tree to JSON
-    const treeJson = decisionTree.toJSON();
+    const treeJson = decisionTreeToVisJson(decisionTree);
 
     // Output JSON to console
     console.log(treeJson);
 
     // Output JSON to page
     const visualTree = document.getElementById("tree");
-
-    // Define a function to recursively create nodes
-    function createNodes(tree) {
-      var nodes = [];
-
-      // Create a node for the current level
-      var nodeLabel = `Column ${tree.splitColumn} <= ${tree.splitValue}`;
-      if (tree.gain !== undefined) {
-        nodeLabel += `\nGini = ${tree.gain.toFixed(3)}`;
-      }
-      var node = {
-        id: tree.kind + Math.random(), // Use a unique ID for each node
-        label: nodeLabel
-      };
-      nodes.push(node);
-
-      // Create left child node if exists
-      if (tree.left) {
-        var leftNodes = createNodes(tree.left);
-        nodes = nodes.concat(leftNodes);
-
-        // Create an edge from current node to left child node
-        var edge = {
-          from: node.id,
-          to: leftNodes[0].id,
-          label: 'True'
-        };
-        nodes.push(edge);
-      }
-
-      // Create right child node if exists
-      if (tree.right) {
-        var rightNodes = createNodes(tree.right);
-        nodes = nodes.concat(rightNodes);
-
-        // Create an edge from current node to right child node
-        var edge = {
-          from: node.id,
-          to: rightNodes[0].id,
-          label: 'False'
-        };
-        nodes.push(edge);
-      }
-
-      return nodes;
-    }
-
-    // Create nodes and edges for the decision tree
-    var nodes = createNodes(treeJson);
-
-    // Create a data object with nodes and edges
-    var data = {
-      nodes: new vis.DataSet(nodes.filter(n => !n.from)), // Only add nodes with no 'from' attribute (top-level nodes)
-      edges: new vis.DataSet(nodes.filter(n => n.from)) // Only add edges (connections between nodes)
-    };
 
     // Define layout
     var options = {
@@ -292,8 +237,26 @@ function trainAndOutputTree() {
     };
 
     // Create a network visualization
-    var network = new vis.Network(visualTree, data, options);
+    var network = new vis.Network(visualTree, treeJson, options);
   });
+}
+
+function decisionTreeToVisJson(decisionTree) {
+  // Recursive function to convert decision tree to JSON for vis.js
+  function convertNode(node) {
+    var convertedNode = {
+      id: node.id.toString(),
+      label: node.label
+    };
+    if (node.childs) {
+      convertedNode.children = node.childs.map(convertNode);
+    }
+    return convertedNode;
+  }
+
+  var rootNode = convertNode(decisionTree.root);
+
+  return rootNode;
 }
 
 
