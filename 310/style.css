@@ -28,6 +28,13 @@ img {
     font-style: normal;
 }
 
+.scrollable-div {
+  /* Set a fixed height for the div */
+  height: 200px; /* Adjust as needed */
+
+  /* Add overflow property to make content scrollable */
+  overflow: auto; /* or overflow: scroll; */
+}
 
 
 /* Code for header in 310 project */
