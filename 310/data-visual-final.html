@@ -27,13 +27,13 @@
     <h1 class="dm-sans-title">Visual statistics - ML</h1>
     <p>Welcome to my final project for CSC 310 Programming for Data Science.<br><br>
     The goal is to help show the relationship between two variables in a dataset,<br>
-    Visualizing data using a scatter plots, projected regression models, r-square, and more.<br><br>
+    Visualizing and understanding data using a scatter plots, projected regression models, r-square, and more.<br><br>
     To use the web app, please choose two different varibales to compare,<br>and view the outputted graph and its calculated regression line.<br></p>
     <h2>1. Understand the data</h2>
     <p>The first step to analyzing data is understanding the dataset you are working with,<br>
         the following is a link to the dataset we will work with. Also try and conclude where different connections may lie.<br>
         </p>
-    <a href="https://github.com/NoahV17/portfolio_website/blob/main/310/heart.csv" target="_blank">Link to this heart disease dataset on GitHub</a><br>
+    <a href="https://github.com/NoahV17/portfolio_website/blob/main/310/heart.csv" target="_blank">Link to this dataset on GitHub</a><br>
     
     <h2>2. Training the model</h2>
 
@@ -80,12 +80,12 @@
     <!-- make sure this is centered ^ -->
 
     <p>Let's interpret what this data means<br>(be sure to choose data, and press the compute button)</p>
-    <div id="output1">This is the slope of the calculated linear regression line, <br>
-        if you input a number in the box under the train button, it will predict <br>
-        what the y axis variable will equal when the x axis variable is equal to your input. <br>
-        The prediction is done using the linear regression model computed with the ml.js library.</div>
-
-    <div id="output2"></div>
+    <div id="output1"></div>
+    <p>This is the slope of the calculated linear regression line, <br>
+    if you input a number in the box under the train button, it will predict <br>
+    what the y axis variable will equal when the x axis variable is equal to your input. <br>
+    The prediction is done using the linear regression model computed with the ml.js library.</p>
+    <div style="font-weight: bold;" id="output2"></div>
     <div id="testOut"></div>
 
 
@@ -203,6 +203,7 @@
     <div id="tree"></div>
     <div id="tree_accuracy"></div>"
         
-        <h2>5. What can we understand now?</h2>
+        <h2>5. Concluding</h2>
+    <p>In this exercise, we used two different machine learning models to help is model the data and find a relationship between the data and the target variable in the dataset. With our target variable in the end being "heart_disease", we were able to create a highly accurate decision tree.</p>
 </body>
 </html>

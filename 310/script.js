@@ -31,7 +31,7 @@ function trainAndOutput() {
     // Output model stats
     document.getElementById("output1").innerText = 'Slope: ' + slope.toFixed(2) + '\n' +
                                                    'Intercept: ' + intercept.toFixed(2);
-    document.getElementById("output2").innerText = '<heavy>Prediction:</heavy> ' + prediction.toFixed(2);
+    document.getElementById("output2").innerText = 'Prediction: ' + prediction.toFixed(2);
 
     // Create traces for the data points
     const traceYes = {
