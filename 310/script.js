@@ -32,7 +32,7 @@ function trainAndOutput() {
     document.getElementById("output1").innerText = 'Slope: ' + slope.toFixed(2) + '\n' +
                                                    'Intercept: ' + intercept.toFixed(2);
     document.getElementById("explanation").innerText = "Let's interpret what this data means. Slope is the amount that the y variable, in your case '" + yColumn + "', increases for every 1 unit that the x variable '" + xColumn + "' increases. So, '" + yColumn + "' increases by " + slope.toFixed(2) + " for every 1 unit increase in '" + xColumn + "'. And the intercept is the value of '" + yColumn + "' when '" + xColumn + "' is 0.";
-    document.getElementById("output2").innerText = 'Prediction: ' + prediction.toFixed(2);
+    document.getElementById("output2").innerText = 'Prediction: When the x-axis variable, ' + xColumn + ', is at the value of your input(' +xpredictInt + '), the y-axis variable, '+yColumn+', is' + prediction.toFixed(2);
 
     // Create traces for the data points
     const traceYes = {
@@ -139,7 +139,7 @@ function trainAndOutputTree() {
         // For example, you might want to set a default value
         max = 5; // Default value
     }
-    
+
     // Train decision tree model
     const decisionTree = new ML.DecisionTreeClassifier({
       maxDepth: max
