@@ -31,7 +31,7 @@ function trainAndOutput() {
     // Output model stats
     document.getElementById("output1").innerText = 'Slope: ' + slope.toFixed(2) + '\n' +
                                                    'Intercept: ' + intercept.toFixed(2);
-    document.getElementById("explanation").innerText = "Let's interpret what this data means. Slope is the amount that the y variable, in your case '" + yColumn + "', increases for every 1 unit that the x variable '" + xColumn + "' increases. So, '" + yColumn + "' increases by "+ slope.toFixed(2)" for every 1 unit increase in '" + xColumn + "'. And the intercept is the value of '" + yColumn + "' when '" + xColumn + "' is 0.";
+    document.getElementById("explanation").innerText = "Let's interpret what this data means. Slope is the amount that the y variable, in your case '" + yColumn + "', increases for every 1 unit that the x variable '" + xColumn + "' increases. So, '" + yColumn + "' increases by " + slope.toFixed(2) + " for every 1 unit increase in '" + xColumn + "'. And the intercept is the value of '" + yColumn + "' when '" + xColumn + "' is 0.";
     document.getElementById("output2").innerText = 'Prediction: ' + prediction.toFixed(2);
 
     // Create traces for the data points
@@ -128,10 +128,11 @@ function trainAndOutputTree() {
       row['thal']
     ]);
     const target = data.map(row => row['heart_disease']);
-
+    const max = 5;
+    max = parseInt(document.getElementById('maxDepth').value);
     // Train decision tree model
     const decisionTree = new ML.DecisionTreeClassifier({
-      maxDepth: 5
+      maxDepth: max
     });
     decisionTree.train(features, target);
 
