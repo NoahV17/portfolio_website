@@ -26,9 +26,9 @@
     
     <h1 class="dm-sans-title">Visual statistics - ML</h1>
     <p>Welcome to my final project for CSC 310 Programming for Data Science.<br><br>
-    The goal is to help show the relationship between two variables in a dataset,<br>
+    The goal is to help show the relationship between variables in a dataset,<br>
     Visualizing and understanding data using a scatter plots, projected regression models, r-square, and more.<br><br>
-    To use the web app, please choose two different varibales to compare,<br>and view the outputted graph and its calculated regression line.<br></p>
+    </p>
     <h2>1. Understand the data</h2>
     <p>The first step to analyzing data is understanding the dataset you are working with,<br>
         the following is a link to the dataset we will work with. Also try and conclude where different connections may lie.<br>
@@ -36,11 +36,10 @@
     <a href="https://github.com/NoahV17/portfolio_website/blob/main/310/heart.csv" target="_blank">Link to this dataset on GitHub</a><br>
     
     <h2>2. Training the model</h2>
+    <p>Now that we have a better understanding of the data, we can start training the model.<br>
+        The following is a scatter plot of the data, choose the x and y axis columns you would like to compare.<br>
+        After choosing the columns, press the "Train and show regression data" button to see the linear regression's output.</p>
 
-    <!-- <button id='btn' class="center" onclick="trainModel()">Train Model</button>
-    <button id='btn' class="center" onclick="updateOutput()">Update Output</button>
-    <button id='btn' class="center" onclick="test()">Tester</button> -->
-    
     <div id="columnOptions">
     <label for="x-select">X Axis Column:</label>
     <select name="cols" id="x-select">
@@ -79,11 +78,11 @@
     <div style="width: 50%; justify-self: center;" id="graph"></div>
     <!-- make sure this is centered ^ -->
 
-    <p>Let's interpret what this data means<br>(be sure to choose data, and press the compute button)</p>
-    <div id="output1"></div>
-    <p>This is the slope of the calculated linear regression line, <br>
-    if you input a number in the box under the train button, it will predict <br>
-    what the y axis variable will equal when the x axis variable is equal to your input. <br>
+    
+    <div style="font-weight: bold;" id="output1"></div>
+    <div id="explanation"></div>
+    <p>
+    If you input a number to be predicted on, it will be output below.<br>
     The prediction is done using the linear regression model computed with the ml.js library.</p>
     <div style="font-weight: bold;" id="output2"></div>
     <div id="testOut"></div>
@@ -196,14 +195,14 @@
         </tr>
     </table></div>
     <h2>4. Try other models</h2>
-    <p>Since not much was found using purely quantitive data, lets choose a model that trains itself using both quantitive and qualitative data.<br>
-        We will choose the heart_disease column as the target variable and see if there is any correlation.</p>
+    <p>Since not much was found using purely the quantitive data, lets choose a model that trains itself using both quantitive and qualitative data.<br>
+        We will use the 'heart_disease' column as the target variable and see if there is any way to make a fairly accurate classification.</p>
     
-    <button onclick="trainAndOutputTree()">Train and show tree model</button>
+    <button onclick="trainAndOutputTree()">Train tree model and output accuracy</button>
     <div id="tree"></div>
     <div id="tree_accuracy"></div>"
         
-        <h2>5. Concluding</h2>
+        <h2>5. Conclusion</h2>
     <p>In this exercise, we used two different machine learning models to help is model the data and find a relationship between the data and the target variable in the dataset. With our target variable in the end being "heart_disease", we were able to create a highly accurate decision tree.</p>
 </body>
 </html>

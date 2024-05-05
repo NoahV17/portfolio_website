@@ -31,6 +31,7 @@ function trainAndOutput() {
     // Output model stats
     document.getElementById("output1").innerText = 'Slope: ' + slope.toFixed(2) + '\n' +
                                                    'Intercept: ' + intercept.toFixed(2);
+    document.getElementById("explanation").innerText = "Let's interpret what this data means. Slope is the amount that the y variable, in your case '" + yColumn + "', increases for every 1 unit that the x variable '" + xColumn + "' increases. So, '" + yColumn + "' increases by "+ slope.toFixed(2)" for every 1 unit increase in '" + xColumn + "'. And the intercept is the value of '" + yColumn + "' when '" + xColumn + "' is 0.";
     document.getElementById("output2").innerText = 'Prediction: ' + prediction.toFixed(2);
 
     // Create traces for the data points
@@ -87,72 +88,6 @@ function trainAndOutput() {
 }
 
 
-// function trainAndOutputTree() {
-//   // Load CSV data
-//   d3.csv('heart.csv').then(data => {
-//     // Convert categorical variables to numerical values
-//     const convertToNumeric = (value) => {
-//       if (isNaN(value)) {
-//         return value.charCodeAt(0);
-//       } else {
-//         return parseFloat(value);
-//       }
-//     };
-
-//     data.forEach(row => {
-//       row['sex'] = convertToNumeric(row['sex']);
-//       row['chest_pain_type'] = convertToNumeric(row['chest_pain_type']);
-//       row['fasting_blood_sugar'] = convertToNumeric(row['fasting_blood_sugar']);
-//       row['resting_electrocardiographic_results'] = convertToNumeric(row['resting_electrocardiographic_results']);
-//       row['exercise_induced_angina'] = convertToNumeric(row['exercise_induced_angina']);
-//       row['slope_peak_exercise'] = convertToNumeric(row['slope_peak_exercise']);
-//       row['thal'] = convertToNumeric(row['thal']);
-//       row['heart_disease'] = row['heart_disease'] === 'yes' ? 1 : 0;
-//     });
-
-//     // Separate features and target variable
-//     const features = data.map(row => [
-//       row['age'],
-//       row['sex'],
-//       row['chest_pain_type'],
-//       row['resting_blood_pressure'],
-//       row['serum_cholestoral'],
-//       row['fasting_blood_sugar'],
-//       row['resting_electrocardiographic_results'],
-//       row['maximum_heart_rate_achieved'],
-//       row['exercise_induced_angina'],
-//       row['oldpeak'],
-//       row['slope_peak_exercise'],
-//       row['number_of_major_vessels'],
-//       row['thal']
-//     ]);
-//     const target = data.map(row => row['heart_disease']);
-
-//     // Train decision tree model
-//     const decisionTree = new ML.DecisionTreeClassifier({
-//       maxDepth: 5
-//     });
-//     decisionTree.train(features, target);
-
-//     // Calculate accuracy
-//     const predictions = decisionTree.predict(features);
-//     const accuracy = calculateAccuracy(target, predictions);
-
-//     // Output accuracy
-//     document.getElementById("tree_accuracy").innerText = 'Accuracy: ' + (accuracy * 100).toFixed(2) + '%';
-
-//     // Convert decision tree to JSON
-//     const treeJson = JSON.stringify(decisionTree, null, 2);
-
-//     // Output JSON to console
-//     console.log(treeJson);
-
-//     // Output JSON to page
-//     const visualTree = document.getElementById("tree");
-//     visualTree.innerHTML = '<pre>' + treeJson + '</pre>';
-//   });
-// }
-
 function trainAndOutputTree() {
   // Load CSV data
   d3.csv('heart.csv').then(data => {
@@ -208,57 +143,16 @@ function trainAndOutputTree() {
     document.getElementById("tree_accuracy").innerText = 'Accuracy: ' + (accuracy * 100).toFixed(2) + '%';
 
     // Convert decision tree to JSON
-    const treeJson = decisionTreeToVisJson(decisionTree);
+    const treeJson = JSON.stringify(decisionTree, null, 2);
 
     // Output JSON to console
     console.log(treeJson);
 
     // Output JSON to page
     const visualTree = document.getElementById("tree");
-
-    // Define layout
-    var options = {
-      nodes: {
-        shape: 'box',
-        margin: 10,
-        widthConstraint: {
-          minimum: 150
-        }
-      },
-      edges: {
-        arrows: 'to'
-      },
-      layout: {
-        hierarchical: {
-          direction: 'UD',
-          sortMethod: 'directed'
-        }
-      }
-    };
-
-    // Create a network visualization
-    var network = new vis.Network(visualTree, treeJson, options);
+    visualTree.innerHTML = '<pre>' + treeJson + '</pre>';
   });
 }
-
-function decisionTreeToVisJson(decisionTree) {
-  // Recursive function to convert decision tree to JSON for vis.js
-  function convertNode(node) {
-    var convertedNode = {
-      id: node.id.toString(),
-      label: node.label
-    };
-    if (node.childs) {
-      convertedNode.children = node.childs.map(convertNode);
-    }
-    return convertedNode;
-  }
-
-  var rootNode = convertNode(decisionTree.root);
-
-  return rootNode;
-}
-
 
 
 function calculateAccuracy(target, predictions) {
