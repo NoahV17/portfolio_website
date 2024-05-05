@@ -128,8 +128,18 @@ function trainAndOutputTree() {
       row['thal']
     ]);
     const target = data.map(row => row['heart_disease']);
-    const max = 5;
-    max = parseInt(document.getElementById('maxDepth').value);
+
+    let maxDepthElement = document.getElementById('maxDepth');
+    let max;
+
+    if (maxDepthElement.value !== '') {
+        max = parseInt(maxDepthElement.value);
+    } else {
+        // Handle the case where the input box is empty
+        // For example, you might want to set a default value
+        max = 5; // Default value
+    }
+    
     // Train decision tree model
     const decisionTree = new ML.DecisionTreeClassifier({
       maxDepth: max
