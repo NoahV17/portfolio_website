@@ -32,7 +32,7 @@ function trainAndOutput() {
     document.getElementById("output1").innerText = 'Slope: ' + slope.toFixed(2) + '\n' +
                                                    'Intercept: ' + intercept.toFixed(2);
     document.getElementById("explanation").innerText = "Let's interpret what this data means. Slope is the amount that the y variable, in your case '" + yColumn + "', increases for every 1 unit that the x variable '" + xColumn + "' increases. So, '" + yColumn + "' increases by " + slope.toFixed(2) + " for every 1 unit increase in '" + xColumn + "'. And the intercept is the value of '" + yColumn + "' when '" + xColumn + "' is 0.";
-    document.getElementById("output2").innerText = 'Prediction: When the x-axis variable, ' + xColumn + ', is at the value of your input(' +xpredictInt + '), the y-axis variable, '+yColumn+', is' + prediction.toFixed(2);
+    document.getElementById("output2").innerText = 'Prediction: When the x-axis variable, ' + xColumn + ', is at the value of your input(' +xpredictInt + '), the y-axis variable, '+yColumn+', is ' + prediction.toFixed(2);
 
     // Create traces for the data points
     const traceYes = {
@@ -165,7 +165,6 @@ function trainAndOutputTree() {
   });
 }
 
-
 function calculateAccuracy(target, predictions) {
   let correct = 0;
   for (let i = 0; i < target.length; i++) {
@@ -174,4 +173,40 @@ function calculateAccuracy(target, predictions) {
     }
   }
   return correct / target.length;
+}
+
+function createBoxPlot() {
+  // Select the box_plot div  
+  const data = data.map(row => +row['heart_disease']);
+  const boxPlotDiv = d3.select('#box_plot');
+
+  // Compute the quartiles and median of the data
+  const q1 = d3.quantile(data, 0.25);
+  const median = d3.quantile(data, 0.5);
+  const q3 = d3.quantile(data, 0.75);
+  const interQuantileRange = q3 - q1;
+  const min = q1 - 1.5 * interQuantileRange;
+  const max = q3 + 1.5 * interQuantileRange;
+
+  // Create the box plot
+  boxPlotDiv.append('div').style('height', `${max - min}px`).style('width', '20px').style('background-color', 'grey');
+  boxPlotDiv.append('div').style('height', `${q3 - q1}px`).style('width', '20px').style('background-color', 'black');
+  boxPlotDiv.append('div').style('height', '2px').style('width', '20px').style('background-color', 'red');
+}
+
+function createHistogram() {
+  // Select the histogram div
+  const data = data.map(row => +row['heart_disease']);
+  const histogramDiv = d3.select('#histogram');
+
+  // Create a histogram generator
+  const histogram = d3.histogram().domain([d3.min(data), d3.max(data)]).thresholds(10);
+
+  // Generate the histogram data
+  const bins = histogram(data);
+
+  // Create the histogram
+  bins.forEach(bin => {
+    histogramDiv.append('div').style('height', '20px').style('width', `${bin.length}px`).style('background-color', 'grey');
+  });
 }
