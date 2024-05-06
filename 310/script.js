@@ -75,7 +75,7 @@ function trainAndOutput() {
       xaxis: { title: xColumn },
       yaxis: { title: yColumn }
     };
-    
+
     const layout3 = {
       title: 'Hist',
       xaxis: { title: xColumn },
@@ -84,10 +84,38 @@ function trainAndOutput() {
 
     // Add the traces to the plot
     Plotly.newPlot('graph', [traceYes, traceNo, lineTrace], layout);
+    // For the histogram
+    const traceYesHistogram = {
+      x: xYes,
+      type: 'histogram',
+      opacity: 0.5,
+      name: 'Yes'
+    };
 
-    Plotly.newPlot('histogram', [traceYes, traceNo], layout2);
-    Plotly.newPlot('box_plot', [traceYes, traceNo], layout3);
+    const traceNoHistogram = {
+      x: xNo,
+      type: 'histogram',
+      opacity: 0.5,
+      name: 'No'
+    };
 
+    Plotly.newPlot('histogram', [traceYesHistogram, traceNoHistogram], layout2);
+
+    // For the box plot
+    const traceYesBox = {
+      y: yYes,
+      type: 'box',
+      name: 'Yes'
+    };
+
+    const traceNoBox = {
+      y: yNo,
+      type: 'box',
+      name: 'No'
+    };
+
+    Plotly.newPlot('box_plot', [traceYesBox, traceNoBox], layout3);
+    
     // Calculate R-Square score
     const score = regression.score(xYes.concat(xNo), yYes.concat(yNo));
     const rSquare = score.r2;
