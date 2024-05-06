@@ -176,37 +176,53 @@ function calculateAccuracy(target, predictions) {
 }
 
 function createBoxPlot() {
-  // Select the box_plot div  
-  const data = data.map(row => +row['heart_disease']);
-  const boxPlotDiv = d3.select('#box_plot');
+  // Load the data from the CSV file
+  d3.csv('heart.csv').then(data => {
+    // Map the data to the 'heart_disease' variable
+    const heartDiseaseData = data.map(row => +row['heart_disease']);
 
-  // Compute the quartiles and median of the data
-  const q1 = d3.quantile(data, 0.25);
-  const median = d3.quantile(data, 0.5);
-  const q3 = d3.quantile(data, 0.75);
-  const interQuantileRange = q3 - q1;
-  const min = q1 - 1.5 * interQuantileRange;
-  const max = q3 + 1.5 * interQuantileRange;
+    // Select the box_plot div
+    const boxPlotDiv = d3.select('#box_plot');
 
-  // Create the box plot
-  boxPlotDiv.append('div').style('height', `${max - min}px`).style('width', '20px').style('background-color', 'grey');
-  boxPlotDiv.append('div').style('height', `${q3 - q1}px`).style('width', '20px').style('background-color', 'black');
-  boxPlotDiv.append('div').style('height', '2px').style('width', '20px').style('background-color', 'red');
+    // Compute the quartiles and median of the data
+    const q1 = d3.quantile(heartDiseaseData, 0.25);
+    const median = d3.quantile(heartDiseaseData, 0.5);
+    const q3 = d3.quantile(heartDiseaseData, 0.75);
+    const interQuantileRange = q3 - q1;
+    const min = q1 - 1.5 * interQuantileRange;
+    const max = q3 + 1.5 * interQuantileRange;
+
+    // Clear the div
+    boxPlotDiv.html('');
+
+    // Create the box plot
+    boxPlotDiv.append('div').style('height', `${max - min}px`).style('width', '20px').style('background-color', 'grey');
+    boxPlotDiv.append('div').style('height', `${q3 - q1}px`).style('width', '20px').style('background-color', 'black');
+    boxPlotDiv.append('div').style('height', '2px').style('width', '20px').style('background-color', 'red');
+  });
 }
 
 function createHistogram() {
-  // Select the histogram div
-  const data = data.map(row => +row['heart_disease']);
-  const histogramDiv = d3.select('#histogram');
+  // Load the data from the CSV file
+  d3.csv('heart.csv').then(data => {
+    // Map the data to the 'heart_disease' variable
+    const heartDiseaseData = data.map(row => +row['heart_disease']);
 
-  // Create a histogram generator
-  const histogram = d3.histogram().domain([d3.min(data), d3.max(data)]).thresholds(10);
+    // Select the histogram div
+    const histogramDiv = d3.select('#histogram');
 
-  // Generate the histogram data
-  const bins = histogram(data);
+    // Create a histogram generator
+    const histogram = d3.histogram().domain([d3.min(heartDiseaseData), d3.max(heartDiseaseData)]).thresholds(10);
 
-  // Create the histogram
-  bins.forEach(bin => {
-    histogramDiv.append('div').style('height', '20px').style('width', `${bin.length}px`).style('background-color', 'grey');
+    // Generate the histogram data
+    const bins = histogram(heartDiseaseData);
+
+    // Clear the div
+    histogramDiv.html('');
+
+    // Create the histogram
+    bins.forEach(bin => {
+      histogramDiv.append('div').style('height', '20px').style('width', `${bin.length}px`).style('background-color', 'grey');
+    });
   });
 }
