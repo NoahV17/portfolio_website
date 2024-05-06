@@ -70,10 +70,23 @@ function trainAndOutput() {
       yaxis: { title: yColumn }
     };
 
+    const layout2 = {
+      title: 'Hist',
+      xaxis: { title: xColumn },
+      yaxis: { title: yColumn }
+    };
+    
+    const layout3 = {
+      title: 'Hist',
+      xaxis: { title: xColumn },
+      yaxis: { title: yColumn }
+    };
+
     // Add the traces to the plot
     Plotly.newPlot('graph', [traceYes, traceNo, lineTrace], layout);
 
-
+    Plotly.newPlot('histogram', [traceYes, traceNo], layout2);
+    Plotly.newPlot('box_plot', [traceYes, traceNo], layout3);
 
     // Calculate R-Square score
     const score = regression.score(xYes.concat(xNo), yYes.concat(yNo));
@@ -174,51 +187,3 @@ function calculateAccuracy(target, predictions) {
   }
   return correct / target.length;
 }
-
-function createBoxPlot() {
-  // Load the data from the CSV file
-  d3.csv('heart.csv').then(data => {
-    // Map the data to the 'heart_disease' variable
-    const heartDiseaseData = data.map(row => +row['heart_disease']);
-
-    // Create the box plot
-    const trace = {
-      y: heartDiseaseData,
-      type: 'box',
-      name: 'Heart Disease Data',
-      boxpoints: 'all'
-    };
-    var data = [trace];
-
-    Plotly.newPlot('box_plot', data);
-  });
-}
-
-d3.csv('heart.csv').then(data => {
-  // Map the data to the 'age' and 'resting_blood_pressure' variables
-  const ageData = data.map(row => +row['age']);
-  const restingBloodPressureData = data.map(row => +row['resting_blood_pressure']);
-  const heartDiseaseLabels = data.map(row => row['heart_disease']);
-
-  // Create the scatter plot
-  const trace = {
-    x: ageData,
-    y: restingBloodPressureData,
-    mode: 'markers',
-    type: 'scatter',
-    name: 'Patient',
-    text: heartDiseaseLabels,  // Use 'heart_disease' as labels
-    marker: { size: 12 }
-  };
-  var layout = {
-    xaxis: {
-      title: 'Age',
-    },
-    yaxis: {
-      title: 'Resting Blood Pressure',
-    }
-  };
-  var data = [trace];
-
-  Plotly.newPlot('scatter_plot', data, layout);
-});
