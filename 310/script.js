@@ -181,24 +181,19 @@ function createBoxPlot() {
     // Map the data to the 'heart_disease' variable
     const heartDiseaseData = data.map(row => +row['heart_disease']);
 
-    // Select the box_plot div
-    const boxPlotDiv = d3.select('#box_plot');
-
-    // Compute the quartiles and median of the data
-    const q1 = d3.quantile(heartDiseaseData, 0.25);
-    const median = d3.quantile(heartDiseaseData, 0.5);
-    const q3 = d3.quantile(heartDiseaseData, 0.75);
-    const interQuantileRange = q3 - q1;
-    const min = q1 - 1.5 * interQuantileRange;
-    const max = q3 + 1.5 * interQuantileRange;
-
-    // Clear the div
-    boxPlotDiv.html('');
-
     // Create the box plot
-    boxPlotDiv.append('div').style('height', `${max - min}px`).style('width', '20px').style('background-color', 'grey');
-    boxPlotDiv.append('div').style('height', `${q3 - q1}px`).style('width', '20px').style('background-color', 'black');
-    boxPlotDiv.append('div').style('height', '2px').style('width', '20px').style('background-color', 'red');
+    const trace = {
+      y: heartDiseaseData,
+      type: 'box',
+      name: 'Heart Disease Data',
+      boxpoints: 'all'
+    };
+
+    const layout = {
+      title: 'Box Plot of Heart Disease Data'
+    };
+
+    Plotly.newPlot('box_plot', [trace], layout);
   });
 }
 
@@ -208,21 +203,19 @@ function createHistogram() {
     // Map the data to the 'heart_disease' variable
     const heartDiseaseData = data.map(row => +row['heart_disease']);
 
-    // Select the histogram div
-    const histogramDiv = d3.select('#histogram');
-
-    // Create a histogram generator
-    const histogram = d3.histogram().domain([d3.min(heartDiseaseData), d3.max(heartDiseaseData)]).thresholds(10);
-
-    // Generate the histogram data
-    const bins = histogram(heartDiseaseData);
-
-    // Clear the div
-    histogramDiv.html('');
-
     // Create the histogram
-    bins.forEach(bin => {
-      histogramDiv.append('div').style('height', '20px').style('width', `${bin.length}px`).style('background-color', 'grey');
-    });
+    const trace = {
+      x: heartDiseaseData,
+      type: 'histogram',
+      name: 'Heart Disease Data'
+    };
+
+    const layout = {
+      title: 'Histogram of Heart Disease Data',
+      xaxis: {title: 'Heart Disease'},
+      yaxis: {title: 'Frequency'}
+    };
+
+    Plotly.newPlot('histogram', [trace], layout);
   });
 }
