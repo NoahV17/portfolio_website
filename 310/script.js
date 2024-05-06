@@ -188,34 +188,37 @@ function createBoxPlot() {
       name: 'Heart Disease Data',
       boxpoints: 'all'
     };
+    var data = [trace];
 
-    const layout = {
-      title: 'Box Plot of Heart Disease Data'
-    };
-
-    Plotly.newPlot('box_plot', [trace], layout);
+    Plotly.newPlot('box_plot', data);
   });
 }
 
-function createHistogram() {
-  // Load the data from the CSV file
-  d3.csv('heart.csv').then(data => {
-    // Map the data to the 'heart_disease' variable
-    const heartDiseaseData = data.map(row => +row['heart_disease']);
+d3.csv('heart.csv').then(data => {
+  // Map the data to the 'age' and 'resting_blood_pressure' variables
+  const ageData = data.map(row => +row['age']);
+  const restingBloodPressureData = data.map(row => +row['resting_blood_pressure']);
+  const heartDiseaseLabels = data.map(row => row['heart_disease']);
 
-    // Create the histogram
-    const trace = {
-      x: heartDiseaseData,
-      type: 'histogram',
-      name: 'Heart Disease Data'
-    };
+  // Create the scatter plot
+  const trace = {
+    x: ageData,
+    y: restingBloodPressureData,
+    mode: 'markers',
+    type: 'scatter',
+    name: 'Patient',
+    text: heartDiseaseLabels,  // Use 'heart_disease' as labels
+    marker: { size: 12 }
+  };
+  var layout = {
+    xaxis: {
+      title: 'Age',
+    },
+    yaxis: {
+      title: 'Resting Blood Pressure',
+    }
+  };
+  var data = [trace];
 
-    const layout = {
-      title: 'Histogram of Heart Disease Data',
-      xaxis: {title: 'Heart Disease'},
-      yaxis: {title: 'Frequency'}
-    };
-
-    Plotly.newPlot('histogram', [trace], layout);
-  });
-}
+  Plotly.newPlot('scatter_plot', data, layout);
+});
