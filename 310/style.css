@@ -84,3 +84,13 @@ button {
   button:hover {
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
   }
+  .collapsible {
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+  
+  .content {
+    display: none;
+    overflow: hidden;
+  }
