@@ -68,3 +68,19 @@ ul {
   #tree {
     height: 100px;
   }
+
+button {
+    background-color: #3b2eb2;
+    color: white;
+    padding: 12px 20px;
+    margin: 6px 0;
+    border: none;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: bold;  
+    border-radius: 30px;  
+  }
+
+  button:hover {
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
