@@ -1,17 +1,13 @@
 html{
-  background-color: #356183;
+  background-color: #bc8cff;
   color: white;
   font-family: 'Gabarito', cursive;
   font-size: 25px;
 }
 
-body {
-  margin: 0%;
-}
-
 div {
   padding: 10px;
-  width: 80%;
+  width: 90%;
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
@@ -25,11 +21,6 @@ h1 {
 
 h2 {
   font-size: 40px;
-  font-family: 'Gabarito';
-  text-align: center;
-}
-
-h3 {
   font-family: 'Gabarito';
   text-align: center;
 }
@@ -63,232 +54,15 @@ input {
   border-radius: 100%;
 }
 
-#nodot {
-  list-style-type: none;
-  color: white;
-}
-
-#inline {
-  display: inline-flex;
-
-}
-
-
 p {
   font-size: 20px;
   font-weight: 100;  
   text-align: center;
-
 }
 
 .shadow {
-  box-shadow: 0 10px 30px 0 rgba(67, 80, 98, 0.24), 0 2px 4px 0 rgba(67, 80, 98, 0.1) !important; }
-
-
-.circle{
-  border-radius: 100%;
+  box-shadow: 0 10px 30px 0 rgba(67, 80, 98, 0.24), 0 2px 4px 0 rgba(67, 80, 98, 0.1) !important; 
 }
-
-.center {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.left {
-  text-align: left;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-ul.top{
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  font-size: 24px;
-  font-family: 'Gabarito';
-  font-weight: 700;
-  text-align: center;
-    z-index: 10;
-
-}
-
-#paragraph{
-  font-size: 18px;
-
-}
-
-@media only screen and (min-width: 1000px) and (max-width: 1500px) {
-  .timeline {
-    flex-direction: column;
-  }
-  #gif {
-    width: 300px;
-    height: 450px;
-  }
-}
-
-@media only screen and (min-width: 700px) and (max-width: 1000px) {
-  .timeline {
-    flex-direction: column;
-  }
-  #gif {
-    width: 250px;
-    height: 350px;
-  }
-  #paragraph{
-    font-size: 13px;
-  }
-}
-
-@media only screen and (min-width: 500px) and (max-width: 700px) {
-  .timeline {
-    flex-direction: column;
-  }
-  #gif {
-    width: 200px;
-    height: 320px;
-  }
-  #paragraph{
-    font-size: 10px;
-  }
-}
-
-@media only screen and (min-width: 470px) and (max-width: 500px) {
-  ul.top{
-    font-size: 22px;
-  }
-  li a img {
-    width: 22px;
-  }
-  #gif {
-    width: 160px;
-    height: 290px;
-  }
-  .timeline {
-    flex-direction: column;
-  }
-  #paragraph{
-    font-size: 10px;
-  }
-}
-
-@media only screen and (min-width: 420px) and (max-width: 470px) {
-  ul.top{
-    font-size: 18px;
-  }
-  li a img {
-    width: 18px;
-  }
-  #gif {
-    width: 90px;
-    height: 120px;
-  }
-  .timeline {
-    flex-direction: column;
-  }
-  #paragraph{
-    font-size: 10px;
-  }
-}
-
-@media only screen and (min-width: 370px) and (max-width: 420px) {
-  ul.top{
-    font-size: 15px;
-  }
-  li a img {
-    width: 15px;
-  }
-  #gif {
-    width: 90px;
-    height: 120px;
-  }
-  .timeline {
-    flex-direction: column;
-  }
-  #paragraph{
-    font-size: 11px;
-  }
-}
-
-@media only screen and (min-width: 330px) and (max-width: 370px) {
-  ul.top{
-    font-size: 12px;
-  }
-  li a img {
-    width: 12px;
-  }
-  #gif {
-    width: 90px;
-    height: 120px;
-  }
-  .timeline {
-    flex-direction: column;
-  }
-  #paragraph{
-    font-size: 9px;
-  
-  }
-}
-
-@media only screen and (min-width: 100px) and (max-width: 330px) {
-  ul.top{
-    font-size: 9px;
-  }
-  li a img {
-    width: 9px;
-  }
-  #gif {
-    width: 90px;
-    height: 120px;
-  }
-  .timeline {
-    flex-direction: column;
-  }
-  #paragraph{
-    font-size: 8px;
-  }
-}
-
-
-li.top{
-  text-align: center;
-}
-
-
-li a.top{
-  display: block;
-  color: rgb(71, 69, 78);
-  text-align: center;
-  padding: 4px 4px;
-  margin: 10px;
-  text-decoration: none;
-  font-family: 'Gabarito';
-  font-weight: 700;
-  background-color: aliceblue;
-  border-radius: 15px;
-  z-index: 10;
-}
-
-ul {
-  align-content: center;
-  display:inline-block;
-  padding: 0px;
-  text-align: left;
-}
-  
-
-
-.whitesvg {
-  filter: invert(100%) sepia(6%) saturate(590%) hue-rotate(326deg) brightness(112%) contrast(100%);
-  display: inline;
-}
-
-
 
 /*Portfolio gallery code*/
 
@@ -298,7 +72,6 @@ ul {
   justify-content: center;
   gap: 15px;
   row-gap: 10px;
-
 }
 
 .image-gallery > li {
@@ -306,7 +79,6 @@ ul {
   position: relative;
   cursor: pointer;
   list-style-type: none;
-
 }
 
 .image-gallery::after {
@@ -320,36 +92,75 @@ ul {
   height: auto;
   vertical-align: middle;
   border-radius: 5px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
 
-/*Css for timeline*/
-
-.timeline {
-  list-style: none;
+ul {
+  list-style-type: none;
   padding: 0;
-  margin: 0;
+}
+
+li {
+  display: inline;
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+}
+
+a::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  position: absolute;
+  bottom: -3px;
+  left: 0%;
+  transition: width 0.3s ease;
+}
+
+a:hover::after,
+a.active::after {
+  width: 100%;
+  background-color: rgb(255, 255, 255); /* Change to your desired active color */
+  background-color: black;
+
+}
+
+nav ul {
   display: flex;
-}
-.timeline-item {
-  display: flex;
-  flex-direction:column;
-  align-items: center;
-  margin-right: 10px;
-}
-.timeline-item .date {
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 10px;
-}
-.timeline-item .content {
-  text-align: center;
+  justify-content: center;
+  list-style-type: none;
 }
 
+nav ul li a {
+  color: black;
+  text-decoration: none;
+}
 
+nav ul li a:hover {
+  background-color: inherit;
+  color: inherit;
+}
 
+/* Bento box code */
+.bento {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 10px;
+}
 
-
-.content{
-  font-size: 15px;
+.bento_content_blue {
+  aspect-ratio: 16/19;
+  padding: 10px;
+  border-radius: 20px;
+  background: rgba(7, 40, 255, 0.19);
+  padding: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }

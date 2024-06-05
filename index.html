@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Patua+One&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <!--External sheets-->
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
@@ -19,74 +20,39 @@
 
 <body>
 
-<!--Header-->
-<ul class="top" class="shadow">
-    <li><a class="top" style="float:left" href="index.html">About</a></li>
-    <li><a class="top" style="float:left" href="projects.html">Projects</a></li>
-    <li><a class="top" style="float:left" href="portfolio.html">Portfolio</a></li>
+<nav>
+    <ul>
+        <li><a href="./projects.html">Projects</a></li>
+        <li><a href="#" class="active">About</a></li>
+        <li><a href="./portfolio.html">Photos</a></li>
+    </ul>
+</nav>
 
-    <li style="float:right"><a class="top" href="https://www.instagram.com/variophotos/" target="_blank"><img src="img/logo/instagram.svg" width="27px"/></a></li>
-    <li style="float:right"><a class="top" href="https://github.com/NoahV17" target="_blank"><img src="img/logo/github.svg" width="27px"/></a></li>
-    <li style="float:right"><a class="top" href="https://www.linkedin.com/in/noahvario" target="_blank"><img src="img/logo/linkedin.svg" width="27px"/></a></li>
-</ul>
 
-<!--Pfp div-->
 
-<div class="center" style="padding-top: 90px;" width="90%" >
-    <img class="center shadow circle" src="img/websitePfp.png" alt="Profile picture" width=200px style="border-radius: 100%;">
-    <h1>Noah Vario</h1>
-    <!--<img class="whitesvg" src="img/tech.svg" alt="git" width=50px height=50px>-->
-</div>
+    <!-- <a class="top" href="https://www.instagram.com/variophotos/" target="_blank"><img src="img/logo/instagram.svg" width="27px"/></a> -->
+    <!-- <a class="top" href="https://github.com/NoahV17" target="_blank"><img src="img/logo/github.svg" width="27px"/></a> -->
+    <!-- <a class="top" href="https://www.linkedin.com/in/noahvario" target="_blank"><img src="img/logo/linkedin.svg" width="27px"/></a> -->
 
-<!-- testttt -->
-<div id="about" class="head" style="width: 60%px; text-align: center;">
-    <p>
-        <!--<img class="whitesvg" src="img/jp.svg" alt="hiragana" width=50px height=50px>
-        <img class="whitesvg" src="img/cam.svg" alt="camera" width=50px height=50px>
-        <img class="whitesvg" src="img/art.svg" alt="art" width=50px height=50px>-->
-        Hello, I'm Noah—a creative with a passion for art, 
-        photography, and gaming. Beyond digital realms and the 
-        lens, I thrive in computer technology and dynamic programming.
-         Centered on a relentless pursuit of knowledge and new experiences, 
-         whether through code or embracing the world around me.    
-    </p>   
-</div>
 
-<div>
-    <!--<li class="top">Comp Sci student</li>
-    <li class="top">Photographer</li>
-    <li class="top">Creative</li>-->
-
-    <ul class="timeline">
-        <li class="timeline-item">
-            <div class="date">2023 - Present</div>
-            <div class="content">This marked the year I graduated CCRI with an Associates 
-                degree. After taking a wide variety of CS classes I felt very confident beginning 
-                my BS of CS at URI which I would transfer into the following Fall. Now at URI, I 
-                take part in the ML4STS (Machine Learning for Statistics) Lab, I am taking courses 
-                tailored to SWE, Cybersecurity, and Mathematics.</div>
-        </li>
-        
-        <li class="timeline-item">
-            <div class="date">2020 - 2023</div>
-            <div class="content">This is around the time I transferred to Lincoln High School 
-                and continued my journey knowing I had a real interest in computer science. 
-                I took the equivalent to Advanced Java in the form of AP Computer Science A 
-                and knew I wanted to continue. From here I planned out what I would be doing 
-                for college, what programs to apply to and I ended up in a great local spot at 
-                my community college. They made it easy to get the required CS credits I would 
-                need for my future 4 year degree for a seamless transfer after 2 years.</div>
-        </li>
-        <li class="timeline-item">
-            <div class="date">2017 - 2020</div>
-            <div class="content">At this time in high school I was introduced to what the world of 
-                computer science was like; in the form of AP Computer Science Principles with Mrs. 
-                Viera at North Smithfield High School. Along with that class which taught me the basics 
-                like functions, recursion, loops, and more, I took another class, Website Development 
-                and took my first steps into HTML and CSS.</div>
-        </li>
-        
-    </ul> 
+<!-- Bento -->
+<div class="bento">
+    <div class="bento_content_blue">
+        <h1 class="bento__title">Noah Vario</h1>
+        <p class="bento__text">I am a passionate student at the University of Rhode Island studying Computer Science. I love learning and practicing software development, photography, cybersecurity, and directing.
+    </div>
+    <div class="bento_content_clear">
+        <h1 class="bento__title">5.18.24</h1>
+        <p class="bento__text">Lorem ipsum dolor sit amet, consectetur adipi
+    </div>
+    <div class="bento__content">
+        <h1 class="bento__title">4.31.24</h1>
+        <p class="bento__text">Lorem ipsum dolor sit amet, coLorem ipsum dolor sit amet, consectetur adipi
+    </div>
+    <div class="bento__content">
+        <h1 class="bento__title">Breaking into Computer Vision</h1>
+        <p class="bento__text">Abstract about working with OpenCV and Python to create a model that is trained on objects for our robot to distuiguish between things underwater.
+    </div>
 </div>
 
 </body>
