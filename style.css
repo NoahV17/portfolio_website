@@ -1,6 +1,6 @@
 html{
-  background-color: #bc8cff;
-  color: white;
+  background-color: #ffffff;
+  color: #000000;
   font-family: 'Gabarito', cursive;
   font-size: 25px;
 }
@@ -87,6 +87,8 @@ p {
 }
 
 .image-gallery li img {
+  border: 5px solid #D2E3FC;
+  transition: transform 0.5s, border-color 0.5s;
   object-fit: cover;
   max-width: 100%;
   height: auto;
@@ -94,6 +96,13 @@ p {
   border-radius: 5px;
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.image-gallery li img:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s;
+  border-color: #174EA6;
+  
 }
 
 
@@ -152,7 +161,7 @@ nav ul li a:hover {
 /* Bento box code */
 .bento {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 10px;
 }
 
