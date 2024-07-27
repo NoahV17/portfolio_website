@@ -173,3 +173,34 @@ nav ul li a:hover {
   padding: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
+
+
+
+.project-description {
+  padding: 0%;
+  width:90%;
+  text-align: left;
+}
+
+.project-container {
+  display: flex;
+  flex-direction: row; /* Default layout */
+  align-items: center;
+}
+
+.project-image {
+  margin-right: 20px; /* Add some space between the image and the text */
+}
+
+@media (max-width: 768px) {
+  .project-container {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center; /* Center items horizontally */
+  }
+
+  .project-image, .project-description {
+    width: 100%; /* Make image and text take full width */
+    margin: 0; /* Reset margins */
+  }
+}
+
