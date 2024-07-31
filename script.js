@@ -65,3 +65,19 @@ function convertCurrency(amount, fromCurrency, toCurrency, cb) {
   });
 }
 
+function toggleText() {
+  var moreText = document.querySelector('.bento_more_text');
+  if (moreText.style.display === "none") {
+    moreText.style.display = "block"; // Show the hidden text
+    document.querySelector('.bento_content').classList.add('expanded'); // Optional: Add class for expanded state
+  } else {
+    moreText.style.display = "none"; // Hide the text again
+    document.querySelector('.bento_content').classList.remove('expanded'); // Optional: Remove class for expanded state
+  }
+}
+
+function scrollToSection(sectionId) {
+  document.getElementById(sectionId).scrollIntoView({
+      behavior: 'smooth'
+  });
+}

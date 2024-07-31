@@ -19,7 +19,6 @@
 
 <body>
 
-<!--Header-->
 <nav>
     <ul>
         <li><a href="#" class="active">Projects</a></li>
@@ -32,18 +31,34 @@
     </ul>
 </nav>
 
-<div>   
+<div class="intro-boxes">
+    <div class="project-card" onclick="scrollToSection('defender')">
+        <img src="path/to/visualization-image.jpg" alt="Galactic Defender">
+        <div class="card-description">Description of Data Vis...</div>
+    </div>
+    <div class="project-card" onclick="scrollToSection('pomodoro')">
+        <img src="path/to/visualization-image.jpg" alt="Pocket Pomodoro">
+        <div class="card-description">Description of Data Vis...</div>
+    </div>
+    <div class="project-card" onclick="scrollToSection('visualization')">
+        <img src="path/to/visualization-image.jpg" alt="Data Vis">
+        <div class="card-description">Description of Data Vis...</div>
+    </div>
+</div>
+
+
+<div id="defender">   
     <h2>Galactic Defender<a href="https://github.com/NoahV17/Galactic-Defender" target="_blank"><img src="img/logo/GHsquare.png" style="width: 37px;"/></a></h2>    
     <div class="project-container" style="display:flex;">
         <img class="project-image" style="display: block; max-width: 100%; height: auto; border: 10px solid rgb(111, 111, 111); border-radius: 8px;" src="img/gdgameplay.gif">
         <div class="project-description">
-            <p id="paragraph"><br>Built using Python's Pygame library, "Glactic Defender" employs object-oriented programming principles to manage game entities efficiently. The game features a diverse array of classes, including Background, Ship, Asteroid, Coin, and Mothership, each contributing to the overall gameplay experience. Collision detection, sprite animation, and user input handling are seamlessly integrated to create a responsive and immersive gaming environment.</p>
+            <p id="paragraph"><br>Built using Python's Pygame library, <heavy>Glactic Defender</heavy> employs object-oriented programming principles, as well as manual memory allocation to manage an ongoing flow of game entities. The game features 3 levels, 3 difficulty options, and a diverse array of classes, including Background, Ship, Asteroid, Coin, and Mothership, each contributing to the overall gameplay experience. Collision detection, sprite animation, and user input handling are seamlessly integrated to create a responsive and immersive gaming environment.</p>
             <p id="paragraph">Key Features: Dynamic sprites, multiple levels, boss fights, score tracking, radomized elements, and progressive level difficulty</p>
         </div>
     </div>
 </div>
 
-<div>   
+<div id="pomodoro">   
     <h2>Study Buddy: Pocket Pomodoro</h2>
     <div class="project-container" style="display:flex;">
         <img class="project-image" style="display: block; max-width: 350px; height: auto;" src="https://raw.githubusercontent.com/NoahV17/study-buddy/main/buddy.png">
@@ -56,7 +71,7 @@
 </div>
 
 
-<div>   
+<div id="visualization">   
     <div class="center" style="padding-top: 90px;" width="90%" >
         <h2>Visualizing and computing data using ML</h2>
     </div>

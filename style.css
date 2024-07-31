@@ -57,7 +57,7 @@ input {
 p {
   font-size: 20px;
   font-weight: 100;  
-  text-align: center;
+  text-align: left;
 }
 
 .shadow {
@@ -102,7 +102,8 @@ p {
   transform: scale(1.05);
   transition: transform 0.2s;
   border-color: #174EA6;
-  
+  box-shadow: 0 10px 30px 0 rgba(67, 80, 98, 0.24), 0 2px 4px 0 rgba(67, 80, 98, 0.1) !important; 
+
 }
 
 
@@ -162,22 +163,48 @@ nav ul li a:hover {
 .bento {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 10px;
+  gap: 15px;
 }
 
 .bento_content_blue {
   aspect-ratio: 16/19;
-  padding: 10px;
+  padding: 20px; /* Consolidated duplicate padding property */
   border-radius: 20px;
   background: rgba(7, 40, 255, 0.19);
-  padding: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
 }
 
+.bento_content_blue:hover {
+  transform: scale(1.05); /* Slightly increase size */
+  background-color: rgba(7, 40, 255, 0.5); /* Change background color to be more opaque */
+}
 
+.bento_content {
+  aspect-ratio: 16/19;
+  padding: 20px; 
+  border-radius: 20px;
+  transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
+  cursor: pointer; /* Indicates the element is clickable */
+  transition: all 0.3s ease; /* Optional: Adds transition effect */
+}
+
+/* Optional: Style for expanded state */
+.bento_content.expanded {
+  background-color: #f0f0f0; /* Example: Change background on expand */
+}
+
+.bento_content:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 6px 6px rgba(0, 0, 0, 0.22); /* Enhanced shadow on hover */
+}
+
+.bento > *:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 0 6px 6px rgba(0, 0, 0, 0.22); /* Enhanced shadow on hover */
+}
 
 .project-description {
-  padding: 0%;
+  /* padding: 5%; */
+  margin: 4%;
   width:90%;
   text-align: left;
 }
@@ -199,8 +226,39 @@ nav ul li a:hover {
   }
 
   .project-image, .project-description {
+    margin: 10; /* Reset margins */
     width: 100%; /* Make image and text take full width */
-    margin: 0; /* Reset margins */
   }
 }
 
+
+.intro-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.project-card {
+  width: 300px; /* Adjust based on your preference */
+  border: 2px solid #000; /* Border around the card */
+  border-radius: 10px; /* Rounded corners */
+  overflow: hidden; /* Ensures the content fits within the borders */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+}
+
+.project-card img {
+  width: 100%; /* Make the image fill the card width */
+  aspect-ratio: 3 / 4; /* 3x4 aspect ratio */
+  object-fit: cover; /* Ensures the image covers the area */
+}
+
+.card-description {
+  padding: 10px; /* Space around the description text */
+  border-top: 2px solid #000; /* Border between the image and text */
+}
+
+.project-card:hover {
+  transform: translateY(-10px) translateX(10px); /* Move up and right on hover */
+  box-shadow: 10px 10px 0 0 rgba(0, 0, 0, 0.5); /* Colored shadow with no diffusion */
+}

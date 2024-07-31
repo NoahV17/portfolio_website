@@ -30,7 +30,7 @@ jobs:
           cp .templates/portfolio-template.html portfolio.html
           for FILENAME in $(ls img/portfolio-images/)
           do
-          echo "<li><img class=\"shadow\" src=\"img/portfolio-images/$FILENAME\"></li>" >> "portfolio.html"
+          echo "<li><a href=\"img/portfolio-images/$FILENAME\" target=\"_blank\"><img src=\"img/portfolio-images/$FILENAME\"></a></li>" >> "portfolio.html"
           done
           echo "</ul></body></html>" >> "portfolio.html"
 
