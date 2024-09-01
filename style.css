@@ -137,7 +137,7 @@ a::after {
 a:hover::after,
 a.active::after {
   width: 100%;
-  background-color: rgb(255, 255, 255); /* Change to your desired active color */
+  background-color: rgb(255, 255, 255);
   background-color: black;
 
 }
@@ -161,7 +161,7 @@ nav {
   width: 100%;
  
   justify-content: center;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px); 
   z-index: 1000; 
   padding: 0; 
@@ -202,30 +202,30 @@ nav ul li a {
 
 .bento_content_blue {
   aspect-ratio: 16/19;
-  padding: 20px; /* Consolidated duplicate padding property */
+  padding: 20px;
   border-radius: 20px;
   background: rgba(7, 40, 255, 0.19);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effects */
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .bento_content_blue:hover {
-  transform: scale(1.05); /* Slightly increase size */
-  background-color: rgba(7, 40, 255, 0.5); /* Change background color to be more opaque */
+  transform: scale(1.05);
+  background-color: rgba(7, 40, 255, 0.5);
 }
 
 .bento_content {
   aspect-ratio: 16/19;
   padding: 20px; 
   border-radius: 20px;
-  transition: box-shadow 0.3s ease; /* Smooth transition for shadow */
-  cursor: pointer; /* Indicates the element is clickable */
-  transition: all 0.3s ease; /* Optional: Adds transition effect */
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 /* Optional: Style for expanded state */
 .bento_content.expanded {
-  background-color: #f0f0f0; /* Example: Change background on expand */
+  background-color: #f0f0f0;
 }
 
 .bento_content:hover {
@@ -245,23 +245,23 @@ nav ul li a {
 
 .project-container {
   display: flex;
-  flex-direction: row; /* Default layout */
+  flex-direction: row;
   align-items: center;
 }
 
 .project-image {
-  margin-right: 20px; /* Add some space between the image and the text */
+  margin-right: 20px;
 }
 
 @media (max-width: 768px) {
   .project-container {
-    flex-direction: column; /* Stack items vertically on smaller screens */
-    align-items: center; /* Center items horizontally */
+    flex-direction: column;
+    align-items: center;
   }
 
   .project-image, .project-description {
-    margin: 10; /* Reset margins */
-    width: 100%; /* Make image and text take full width */
+    margin: 10;
+    width: 100%;
   }
 }
 
@@ -278,23 +278,23 @@ nav ul li a {
 }
 
 .project-card {
-  width: 300px; /* Adjust based on your preference */
-  border: 10px solid #000; /* Border around the card */
-  border-radius: 12px; /* Rounded corners */
-  overflow: hidden; /* Ensures the content fits within the borders */
-  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition for hover effect */
+  width: 300px;
+  border: 10px solid #000;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
   padding: 0px;
   background-color: #000;
 }
 
 .project-card img {
-  width: 100%;
+  width: 290px;
   aspect-ratio: 5 / 4;
   object-fit: cover;
-  margin: 0px;
+  margin: 5px;
   padding: 0px;
   border-radius: 6px;
-  border: 10px solid #f0f0f0;
+  outline: 5px solid #f0f0f0;
 }
 
 .card-description {
@@ -313,20 +313,19 @@ nav ul li a {
 
 /* General styling for the code editor */
 .code-editor {
-  background-color: #2b2b2b; /* Dark background similar to an editor */
-  color: #f8f8f2; /* Light text for contrast */
+  background-color: #2b2b2b;
+  color: #f8f8f2;
   padding: 15px;
   border-radius: 8px;
-  font-family: "Courier New", Courier, monospace; /* Monospaced font */
-  overflow-x: auto; /* Horizontal scroll for long lines */
+  font-family: "Courier New", Courier, monospace;
+  overflow-x: auto;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   border: 1px solid #444;
   position: relative;
 }
 
-/* Numbered lines */
 .code-editor pre {
-  counter-reset: line; /* Reset line counter */
+  counter-reset: line;
   margin: 0;
   padding: 0;
   padding-left: 30px;
@@ -334,7 +333,7 @@ nav ul li a {
 
 .code-editor pre code {
   display: block;
-  white-space: pre-wrap; /* Ensures lines wrap if too long */
+  white-space: pre-wrap;
   word-wrap: break-word;
 }
 
