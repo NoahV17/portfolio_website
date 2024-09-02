@@ -11,7 +11,7 @@ html, body{
 }
 
 div {
-  
+  justify-content: center;
 }
 
 .light-div {

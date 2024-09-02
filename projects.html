@@ -92,36 +92,36 @@
                 <br><br>Employing the data structures and implementing them into a handful of helper functions allowed us to incorporate many sorting and tracking methods that help display the app's results on the Unity interface.</p>
         </div>
     </div>
-    <div><img src="img/calendar-view.png" style="border: 6px solid rgb(30, 30, 30); border-radius: 12px; width: 70%; box-shadow: inset;"></div>
-        
-    <p>The above image shows the newly installed app without local data.<br>The next two lines add tasks through the terminal using the compiled C++ program.</p>
     
+    <div><img src="img/calendar-view.png" style="border: 6px solid rgb(30, 30, 30); border-radius: 12px; width: 70%; box-shadow: inset;"></div>    
+    <p>The above image shows the newly installed app without local data.<br>The next two lines add tasks through the terminal using the compiled C++ program.</p>
     <div class="code-editor">
         <pre><code>./task-track ADD <span class="pink">091324</span> Work "Complete Project X" 10</code><code>./task-track ADD <span class="blue">090524</span> Home "Clean the dishes" 5</code><code>./task-track ADD <span class="pink">091324</span> Home "Return Amazon order" 7</code></pre>
     </div>
-        
         <p>After adding the tasks, the user can view them in the Unity interface, or lookup any tasks through the command line.<br><br>
             The folowing ONDAY command looks up and parses any tasks that are due on the date passes into the command, in the example shown it is for.<br><br>
         This is used by the front-end to help lookup the details for when you click on a date that you want to see the given tasks for. If you click on the 13th of September, 2024, it will run the command, the command will output all tasks on that day to the temp.txt file, and the app will read and format the text for the temp file for viewing in the front-end.</p>
-
     <div class="code-editor">
         <pre><code class="language-python">./task-track ONDAY <span class="pink">091324</span></code></pre>
     </div>
-    
     <div><img src="img/onday-example.png" style="border: 6px solid rgb(30, 30, 30); border-radius: 12px; width: 50%; box-shadow: inset;"></div>
-
 </div>
 
 <div id="visualization" class="light-div">   
-    <div class="center" style="padding-top: 90px;" width="90%" >
-        <h2>Visualizing and computing data using ML</h2>
-    </div>
-    
-    
-    <div style="display:flex;">
-        <div style="padding: 0%; width:400px;">
-            <a href="310/data-visual-final.html" target="_blank" style="color: rgb(0, 123, 255); text-decoration: underline;">Click here to view the live web app</a><br>
+    <h2>Visualizing and computing data using ML</h2>
+    <!-- <div class="project-container" style="display:flex;">
+        <img class="project-image" style="display: block; max-width: 350px; height: auto;" src="img/buddy-calendar.png">
+        <div class="project-description">
+            <p id="paragraph">Mar 2024 - May 2024
+                <br><br>A task tracking app that helps all organize their events in a calendar style format. With the help of data structures and algorithms such as the ternary search, self-sorting array, and comb sort, and a front-end built in unity, our team was able to put together a highly functional application that runs on C++ and C# to enhance your daily life.
+                
+                <br><br>Employing the data structures and implementing them into a handful of helper functions allowed us to incorporate many sorting and tracking methods that help display the app's results on the Unity interface.</p>
         </div>
+    </div> -->
+    <a href="310/data-visual-final.html" target="_blank" style="color: rgb(0, 123, 255); text-decoration: underline;">Click here to view the live web app</a><br>
+    <div style="display: flex;">
+        <img src="img/data-iqr.png" style="border: 6px solid rgb(30, 30, 30); border-radius: 12px; width: 50%; box-shadow: inset;">
+        <img src="img/data-scatter.png" style="border: 6px solid rgb(30, 30, 30); border-radius: 12px; width: 50%; box-shadow: inset;">
     </div>
 </div>
 
