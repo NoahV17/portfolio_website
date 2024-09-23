@@ -1,14 +1,14 @@
-# Noah Vario
+### Noah Vario
 
-## Where to reach me
+### Where to reach me
 
-[Github]()
-[LinkedIn]()
+[Github](https://github.com/NoahV17)
+[LinkedIn](https://www.linkedin.com/in/noahvario/)
 
 
-## Projects
+### Projects
 
-## Education
+### Education
 ### May 2025
 - **B.S. of Computer Science** at the [University of Rhode Island](https://uri.edu)
 
